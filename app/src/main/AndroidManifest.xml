@@ -4,18 +4,15 @@
     package="com.xavijimenezmulet.cabifymobilechallenge">
 
     <application
+        android:name=".application.CabifyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@style/Theme.CabifyMobileChallenge"
-        tools:targetApi="32">
-        <profileable
-            android:shell="true"
-            tools:targetApi="29" />
-    </application>
+        tools:targetApi="33" />
 
 </manifest>
