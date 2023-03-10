@@ -11,7 +11,6 @@ object Depends {
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
-    const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val junit = "junit:junit:${Versions.junit}"
     const val testExtJunit = "androidx.test.ext:junit:${Versions.testExtJunit}"
@@ -30,4 +29,7 @@ object Depends {
     const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     const val mockitoInline = "org.mockito:mockito-core:${Versions.mockito}"
+    const val androidTestCore = "androidx.test:core-ktx:${Versions.androidTestCore}"
+    const val junitKotlin = "androidx.test.ext:junit-ktx:${Versions.junitKotlin}"
+    const val archCoreTest = "androidx.arch.core:core-testing:${Versions.archCoreTest}"
 }

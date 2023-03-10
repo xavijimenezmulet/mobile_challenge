@@ -32,12 +32,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility(JavaVersion.VERSION_1_8)
-        targetCompatibility(JavaVersion.VERSION_1_8)
+        sourceCompatibility(JavaVersion.VERSION_11)
+        targetCompatibility(JavaVersion.VERSION_11)
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
         freeCompilerArgs = listOf(ConfigData.xInlineClasses)
     }
 
@@ -49,23 +49,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.core))
-    implementation(project(Modules.data))
-    implementation(project(Modules.domain))
-    implementation(project(Modules.presentation))
-    implementation(Depends.coreKtx)
-    implementation(Depends.appCompat)
-    implementation(Depends.material)
-    implementation(Depends.hiltAndroid)
-    testImplementation(Depends.junit)
-    testImplementation(Depends.hamcrest)
-    testImplementation(Depends.robolectric)
-    testImplementation(Depends.mockito)
-    testImplementation(Depends.mockitoInline)
-    testImplementation(Depends.hiltAndroidTesting)
-    testImplementation("androidx.test:core-ktx:1.5.0")
-    testImplementation("androidx.test.ext:junit-ktx:1.1.5")
-    testImplementation("androidx.arch.core:core-testing:2.2.0")
-    androidTestImplementation(Depends.testExtJunit)
-    androidTestImplementation(Depends.espressoCore)
+    addCommonDependencies()
+    addHiltDependency()
 }

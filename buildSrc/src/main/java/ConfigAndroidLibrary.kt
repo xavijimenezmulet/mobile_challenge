@@ -10,9 +10,9 @@ import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
-fun Project.configureAndroidLibrary(nameSpace: String) {
+fun Project.configureAndroidLibrary(name: String) {
     androidLibrary {
-        namespace = nameSpace
+        namespace = name
         compileSdk = Versions.compileSdk
 
         defaultConfig {
@@ -23,8 +23,8 @@ fun Project.configureAndroidLibrary(nameSpace: String) {
             consumerProguardFiles(ConfigData.consumerRules)
         }
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
         }
         kotlinOptions {
             jvmTarget = Versions.jvmTarget
@@ -43,5 +43,6 @@ fun Project.androidLibrary(configure: Action<LibraryExtension>): Unit =
  */
 fun LibraryExtension.kotlinOptions(configure: Action<KotlinJvmOptions>): Unit =
     (this as ExtensionAware).extensions.configure("kotlinOptions", configure)
+
 
 

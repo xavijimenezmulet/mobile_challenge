@@ -18,7 +18,7 @@ object Versions {
   const val junit = "4.13.2"
   const val testExtJunit = "1.1.5"
   const val espressoCore = "3.5.1"
-  const val jvmTarget = "1.8"
+  const val jvmTarget = "11"
   const val hiltAndroid = "2.44.2"
   const val hiltCompose = "1.0.0"
   const val gradlePlugin = "7.3.1"
@@ -26,4 +26,7 @@ object Versions {
   const val hamcrest = "2.2"
   const val robolectric = "4.9"
   const val mockito = "4.1.0"
+  const val androidTestCore = "1.5.0"
+  const val junitKotlin = "1.1.5"
+  const val archCoreTest = "2.2.0"
 }
