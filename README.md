@@ -10,12 +10,17 @@ Api Reference: https://gist.githubusercontent.com/palcalde/6c19259bd32dd6aafa327
 * Retrofit 2
 
 **DI:**
-* Koin
+* Dagger Hilt
 
-**Animations:**
-* Lottie
+**Testing:**
+* Junit
+* Espresso
+* Robolectric
+* Hamcrest
+* Using TDD
 
 **Other:**
+* Google Splash Screen
 * Google
 * Timber
 * Test
@@ -32,10 +37,11 @@ It uses MVVM pattern and has been designed to be modular and scalable, being abl
 
 App layers are:
 
+* **App** Launcher
 * **Presentation layer:**  UI, ViewModel
-* **Domain layer:** Service
-* **Use Case layer:** Use Case
-* **Data layer:** DataSource
+* **Domain layer:** Use Case & Business model
+* **Data layer:** Local, Remote, model(local, remote) & repository
+* **Core:** Framework, Utils, Constants, Component, Theme, Test Utils, Provider
 
 # Description && Rules
 
