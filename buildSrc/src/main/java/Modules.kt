@@ -5,8 +5,18 @@
  */
 object Modules {
   const val app = ":app"
-  const val core = ":cores"
-  const val data = ":datas"
-  const val domain = ":domains"
-  const val presentation = ":presentations"
+  const val coreComponent = ":core:component"
+  const val coreConstants = ":core:constants"
+  const val coreFramework = ":core:framework"
+  const val coreProvider = ":core:provider"
+  const val coreTestUtils = ":core:testutils"
+  const val coreTheme = ":core:theme"
+  const val coreUtils = ":core:utils"
+  const val dataLocal = ":data:local"
+  const val dataModel = ":data:model"
+  const val dataRemote = ":data:remote"
+  const val dataRepository = ":data:repository"
+  const val domainEntity = ":domain:entity"
+  const val domainUseCase = ":domain:usecase"
+  const val presentationSplash = ":presentation:splash"
 }

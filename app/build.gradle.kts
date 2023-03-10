@@ -49,6 +49,7 @@ android {
 }
 
 dependencies {
+    addModuleDependencies()
     addCommonDependencies()
     addHiltDependency()
 }
