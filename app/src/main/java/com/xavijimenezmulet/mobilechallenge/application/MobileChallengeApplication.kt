@@ -1,4 +1,4 @@
-package com.xavijimenezmulet.cabifymobilechallenge.application
+package com.xavijimenezmulet.mobilechallenge.application
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
@@ -9,4 +9,4 @@ import dagger.hilt.android.HiltAndroidApp
  *   @email xavijimenezmulet@macaqueconsulting.com
  */
 @HiltAndroidApp
-class CabifyApplication: Application()
+class MobileChallengeApplication : Application()

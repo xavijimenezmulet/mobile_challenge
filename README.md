@@ -1,6 +1,6 @@
-# Cabify Mobile Challenge
+# Mobile Challenge
 
-Besides providing exceptional transportation services, Cabify also runs a physical store which sells Products.
+Besides providing exceptional transportation services, Also runs a physical store which sells Products.
 Api Reference: https://gist.githubusercontent.com/palcalde/6c19259bd32dd6aafa327fa557859c2f/raw/ba51779474a150ee4367cda4f4ffacdcca479887/Products.json
 
 # Third-party libraries used

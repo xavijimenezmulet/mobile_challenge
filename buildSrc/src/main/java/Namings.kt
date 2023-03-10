@@ -5,7 +5,7 @@
  */
 object Namings {
     private const val rootPackage = "com.xavijimenezmulet."
-    const val appModule = "${rootPackage}cabifymobilechallenge"
+    const val appModule = "${rootPackage}mobilechallenge"
     const val componentModule = "${rootPackage}component"
     const val constantsModule = "${rootPackage}constants"
     const val frameworkModule = "${rootPackage}framework"

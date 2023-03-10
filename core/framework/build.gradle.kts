@@ -6,5 +6,6 @@ plugins {
 configureAndroidLibrary(Namings.frameworkModule)
 
 dependencies {
+    UTILS
     addCommonDependencies()
 }

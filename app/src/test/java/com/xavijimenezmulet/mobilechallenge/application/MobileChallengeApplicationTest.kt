@@ -1,18 +1,13 @@
-package com.xavijimenezmulet.cabifymobilechallenge.application
+package com.xavijimenezmulet.mobilechallenge.application
 
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import dagger.hilt.android.testing.CustomTestApplication
-import dagger.hilt.android.testing.HiltAndroidRule
-import dagger.hilt.android.testing.HiltAndroidTest
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.notNullValue
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import javax.inject.Inject
 
 /**
  * @author xavierjimenez
@@ -20,13 +15,13 @@ import javax.inject.Inject
  * @email xavijimenezmulet@macaqueconsulting.com
  */
 @RunWith(AndroidJUnit4::class)
-class CabifyApplicationTest {
+class MobileChallengeApplicationTest {
 
-    private lateinit var application: CabifyApplication
+    private lateinit var application: MobileChallengeApplication
 
     @Before
     fun setup() {
-        application = CabifyApplication()
+        application = MobileChallengeApplication()
     }
 
     @Test

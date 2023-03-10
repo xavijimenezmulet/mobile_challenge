@@ -7,4 +7,5 @@ configureAndroidLibrary(Namings.themeModule)
 
 dependencies {
     addCommonDependencies()
+    implementation(Depends.splashscreen)
 }

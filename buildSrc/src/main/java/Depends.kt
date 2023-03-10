@@ -8,10 +8,11 @@ object Depends {
     const val application = "com.android.application"
     const val library = "com.android.library"
     const val kotlinAndroid = "org.jetbrains.kotlin.android"
+    const val kotlinKapt = "kotlin-kapt"
+    const val hiltPlugin = "dagger.hilt.android.plugin"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
-    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val junit = "junit:junit:${Versions.junit}"
     const val testExtJunit = "androidx.test.ext:junit:${Versions.testExtJunit}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
@@ -32,4 +33,14 @@ object Depends {
     const val androidTestCore = "androidx.test:core-ktx:${Versions.androidTestCore}"
     const val junitKotlin = "androidx.test.ext:junit-ktx:${Versions.junitKotlin}"
     const val archCoreTest = "androidx.arch.core:core-testing:${Versions.archCoreTest}"
+    const val splashscreen = "androidx.core:core-splashscreen:${Versions.splashscreen}"
+    const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutineAndroid =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+    const val lifecycleRuntime =
+        "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntime}"
+    const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtx}"
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+    const val androidPaging = "androidx.paging:paging-runtime-ktx:${Versions.androidPaging}"
+    const val datastorePref = "androidx.datastore:datastore-preferences:${Versions.datastorePref}"
 }

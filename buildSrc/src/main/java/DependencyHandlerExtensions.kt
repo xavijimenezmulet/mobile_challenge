@@ -56,6 +56,12 @@ fun DependencyHandler.api(dependencyNotation: Any): Dependency? =
 fun DependencyHandler.kapt(dependencyNotation: Any): Dependency? =
     add("kapt", dependencyNotation)
 
+fun DependencyHandler.kaptTest(dependencyNotation: Any): Dependency? =
+    add("kaptTest", dependencyNotation)
+
+fun DependencyHandler.kaptAndroidTest(dependencyNotation: Any): Dependency? =
+    add("kaptAndroidTest", dependencyNotation)
+
 /**
  * Adds a dependency to the `testImplementation` configuration.
  *
@@ -96,10 +102,19 @@ fun DependencyHandler.addCommonImplDependencies() {
     implementation(Depends.coreKtx)
     implementation(Depends.appCompat)
     implementation(Depends.material)
+    implementation(Depends.coroutineCore)
+    implementation(Depends.coroutineAndroid)
+    implementation(Depends.lifecycleRuntime)
+    implementation(Depends.activityKtx)
+    implementation(Depends.timber)
+    implementation(Depends.androidPaging)
+    implementation("com.squareup:javapoet:1.13.0")
 }
 
 fun DependencyHandler.addHiltDependency() {
     implementation(Depends.hiltAndroid)
+    implementation(Depends.hiltCompose)
+    kapt(Depends.hiltCompiler)
     testImplementation(Depends.hiltAndroidTesting)
 }
 

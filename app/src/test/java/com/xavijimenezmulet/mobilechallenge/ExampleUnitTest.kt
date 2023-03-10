@@ -1,4 +1,4 @@
-package com.xavijimenezmulet.cabifymobilechallenge
+package com.xavijimenezmulet.mobilechallenge
 
 import org.junit.Test
 
