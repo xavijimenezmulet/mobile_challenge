@@ -50,4 +50,5 @@ object Depends {
     const val testJunit4 = "androidx.compose.ui:ui-test-junit4:${Versions.testJunit4}"
     const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTesting}"
     const val testManifest = "androidx.compose.ui:ui-test-manifest:${Versions.testManifest}"
+    const val testTurbine = "app.cash.turbine:turbine:${Versions.testTurbine}"
 }

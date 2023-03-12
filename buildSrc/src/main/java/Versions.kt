@@ -41,4 +41,5 @@ object Versions {
   const val testJunit4 = "1.3.3"
   const val fragmentTesting = "1.5.5"
   const val testManifest = "1.3.3"
+  const val testTurbine = "0.7.0"
 }

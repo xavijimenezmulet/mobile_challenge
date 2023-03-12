@@ -5,10 +5,6 @@ Api Reference: https://gist.githubusercontent.com/palcalde/6c19259bd32dd6aafa327
 
 # Third-party libraries used
 
-**Rest connection:**
-* Okhttp 3
-* Retrofit 2
-
 **DI:**
 * Dagger Hilt
 
@@ -18,6 +14,23 @@ Api Reference: https://gist.githubusercontent.com/palcalde/6c19259bd32dd6aafa327
 * Robolectric
 * Hamcrest
 * Using TDD
+
+**Ui:**
+* XML
+* Jetpack Compose
+
+**Comunication:**
+* Ui State
+* Coroutines
+* Flow
+
+**Rest connection(Remote):**
+* Okhttp 3
+* Retrofit 2
+
+**DB(Local)**
+* Room
+* SQL Lite
 
 **Other:**
 * Google Splash Screen
@@ -45,28 +58,49 @@ App layers are:
 
 # Description && Rules
 
-Description: Develop a very simple App that shows a list of the weather in the current week (one screen and in portrait). The App must meet at least the following:
+Besides providing exceptional transportation services, Also runs a physical store which sells Products.
 
-* 1. Be developed in Kotlin
+Our list of products looks like this:
 
-* 2. Integration with a free API using Retrofit 2. You can use any of https://github.com/public-apis/public-apis#weather
-
-* 3. View using ConstraintLayout
-
- 
-**Additional:**
-
-* · MMVM model using Android JetPackt architecture components
-
-* · Use of Koin for dependency injection
+Code         | Name                |  Price
+-------------------------------------------------
+VOUCHER      | Cabify Voucher      |   5.00€
+TSHIRT       | Cabify T-Shirt      |  20.00€
+MUG          | Cabify Coffee Mug   |   7.50€
 
 
-**Objectives:**
+Various departments have insisted on the following discounts:
 
-* · How to program, code cleaning, comments etc.
+The marketing department believes in 2-for-1 promotions (buy two of the same product, get one free), and would like to have a 2-for-1 special on VOUCHER items.
 
-* · Library knowledge
+The CFO insists that the best way to increase sales is with discounts on bulk purchases (buying x or more of a product, the price of that product is reduced), and demands that if you buy 3 or more TSHIRT items, the price per unit should be 19.00€.
 
-* · Knowledge of design patterns and architectures
+Cabify's checkout process allows for items to be scanned in any order, and should return the total amount to be paid.
 
-* · Project structuring and use of Gradle
+Examples:
+
+Items: VOUCHER, TSHIRT, MUG
+Total: 32.50€
+
+Items: VOUCHER, TSHIRT, VOUCHER
+Total: 25.00€
+
+Items: TSHIRT, TSHIRT, TSHIRT, VOUCHER, TSHIRT
+Total: 81.00€
+
+Items: VOUCHER, TSHIRT, VOUCHER, VOUCHER, MUG, TSHIRT, TSHIRT
+Total: 74.50€
+
+# To do
+
+Implement an app where a user can pick products from a list and checkout them to get the resulting price. No need to implement any real payment system, but we do need a nice user experience where our customers can understand what items are they purchasing, the price and the discount we are applying.
+You should fetch the list of products from https://gist.githubusercontent.com/palcalde/6c19259bd32dd6aafa327fa557859c2f/raw/ba51779474a150ee4367cda4f4ffacdcca479887/Products.json.
+
+# Considerations
+
+Be aware that the discounts are going to change frequently. So the code should support that.
+There is no need for a user login screen.
+Be written as production-ready code. We would like you to build it in the same way as if you were going to publish to the store.
+Consider explaning the solution and why certain things are included and others are left out.
+Be written either in Swift or Kotlin, preferably in the latest stable version of the language.
+If possible, use the latest stable version (no Betas) of Xcode or Android Studio.

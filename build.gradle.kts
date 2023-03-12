@@ -7,6 +7,7 @@ buildscript {
         classpath (Depends.gradlePlugin)
         classpath (Depends.kotlinPlugin)
         classpath (Depends.hiltGradlePlugin)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20")
     }
 }
 

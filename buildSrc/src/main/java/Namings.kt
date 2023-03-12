@@ -20,4 +20,5 @@ object Namings {
     const val repositoryModule = "${rootPackage}repository"
     const val usecaseModule = "${rootPackage}usecase"
     const val splashModule = "${rootPackage}splash"
+    const val welcomeModule = "${rootPackage}welcome"
 }

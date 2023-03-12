@@ -5,7 +5,7 @@ plugins {
     id(Depends.hiltPlugin)
 }
 
-configureAndroidLibrary(Namings.splashModule)
+configureAndroidLibrary(Namings.welcomeModule)
 
 dependencies {
     USE_CASE
