@@ -35,4 +35,10 @@ object Versions {
   const val timber = "5.0.1"
   const val androidPaging = "3.1.1"
   const val datastorePref = "1.0.0"
+  const val mockk = "1.12.3"
+  const val coroutinesTest = "1.6.4"
+  const val testTruth = "1.3.0"
+  const val testJunit4 = "1.3.3"
+  const val fragmentTesting = "1.5.5"
+  const val testManifest = "1.3.3"
 }

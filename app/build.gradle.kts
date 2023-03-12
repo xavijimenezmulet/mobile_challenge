@@ -42,6 +42,12 @@ android {
         freeCompilerArgs = listOf(ConfigData.xInlineClasses)
     }
 
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
+
     packagingOptions {
         resources.excludes.apply {
             add(Excludes.kotlinModule)

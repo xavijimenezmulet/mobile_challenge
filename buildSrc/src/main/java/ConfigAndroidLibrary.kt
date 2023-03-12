@@ -26,6 +26,11 @@ fun Project.configureAndroidLibrary(name: String) {
             sourceCompatibility = JavaVersion.VERSION_11
             targetCompatibility = JavaVersion.VERSION_11
         }
+
+        testOptions {
+            unitTests.isIncludeAndroidResources = true
+        }
+
         kotlinOptions {
             jvmTarget = Versions.jvmTarget
         }

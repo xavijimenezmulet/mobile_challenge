@@ -1,10 +1,10 @@
 package com.xavijimenezmulet.splash
 
-import android.os.Build
+ import android.os.Build
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.collectLatest
  *   @email xavijimenezmulet@macaqueconsulting.com
  */
 @AndroidEntryPoint
-class StartActivity : FragmentActivity() {
+class StartActivity : ComponentActivity() {
 
     private val viewModel by viewModels<StartViewModel>()
 

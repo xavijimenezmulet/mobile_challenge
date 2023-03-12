@@ -4,7 +4,7 @@
  *   @email xavijimenezmulet@macaqueconsulting.com
  */
 object Depends {
-    const val testRunnerPackage = "androidx.test.runner.AndroidJUnitRunner"
+    const val testRunnerPackage = "com.xavijimenezmulet.framework.CustomTestRunner"
     const val application = "com.android.application"
     const val library = "com.android.library"
     const val kotlinAndroid = "org.jetbrains.kotlin.android"
@@ -28,6 +28,7 @@ object Depends {
     const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinPlugin}"
     const val hamcrest = "org.hamcrest:hamcrest:${Versions.hamcrest}"
     const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
+    const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     const val mockitoInline = "org.mockito:mockito-core:${Versions.mockito}"
     const val androidTestCore = "androidx.test:core-ktx:${Versions.androidTestCore}"
@@ -43,4 +44,10 @@ object Depends {
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
     const val androidPaging = "androidx.paging:paging-runtime-ktx:${Versions.androidPaging}"
     const val datastorePref = "androidx.datastore:datastore-preferences:${Versions.datastorePref}"
+    const val coroutinesTest =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
+    const val testTruth = "androidx.test.ext:truth:${Versions.testTruth}"
+    const val testJunit4 = "androidx.compose.ui:ui-test-junit4:${Versions.testJunit4}"
+    const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTesting}"
+    const val testManifest = "androidx.compose.ui:ui-test-manifest:${Versions.testManifest}"
 }

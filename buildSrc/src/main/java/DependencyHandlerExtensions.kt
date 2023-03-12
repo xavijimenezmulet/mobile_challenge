@@ -115,7 +115,10 @@ fun DependencyHandler.addHiltDependency() {
     implementation(Depends.hiltAndroid)
     implementation(Depends.hiltCompose)
     kapt(Depends.hiltCompiler)
+    kaptTest(Depends.hiltAndroidCompiler)
     testImplementation(Depends.hiltAndroidTesting)
+    androidTestImplementation(Depends.hiltAndroidTesting)
+    androidTestImplementation(Depends.hiltAndroidTesting)
 }
 
 fun DependencyHandler.addTestDependencies() {
@@ -127,8 +130,16 @@ fun DependencyHandler.addTestDependencies() {
     testImplementation(Depends.androidTestCore)
     testImplementation(Depends.junitKotlin)
     testImplementation(Depends.archCoreTest)
+    testImplementation(Depends.mockk)
+    androidTestImplementation(Depends.androidTestCore)
+    androidTestImplementation(Depends.robolectric)
     androidTestImplementation(Depends.testExtJunit)
     androidTestImplementation(Depends.espressoCore)
+    testImplementation(Depends.coroutinesTest)
+    testImplementation(Depends.testTruth)
+    testImplementation(Depends.testJunit4)
+    debugImplementation(Depends.fragmentTesting)
+    debugImplementation(Depends.testManifest)
 }
 
 fun DependencyHandler.addModuleDependencies() {
