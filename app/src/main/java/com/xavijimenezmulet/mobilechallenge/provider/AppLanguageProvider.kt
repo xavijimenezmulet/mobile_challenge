@@ -1,10 +1,15 @@
 package com.xavijimenezmulet.mobilechallenge.provider
 
 import android.content.Context
-import com.developersancho.framework.pref.CacheManager
+import com.xavijimenezmulet.framework.base.pref.CacheManager
 import com.xavijimenezmulet.provider.LanguageProvider
 import java.util.*
 
+/**
+ *   @author xavierjimenez
+ *   @since 13/3/23
+ *   @email xavijimenezmulet@macaqueconsulting.com
+ */
 class AppLanguageProvider constructor(private val cacheManager: CacheManager) : LanguageProvider {
 
     companion object {

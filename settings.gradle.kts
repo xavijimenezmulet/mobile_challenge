@@ -1,3 +1,4 @@
+include(":presentation:home")
 
 
 include(":app")
@@ -16,3 +17,4 @@ include(":domain:entity")
 include(":domain:usecase")
 include(":presentation:splash")
 include(":presentation:welcome")
+include(":presentation:products")

@@ -67,7 +67,7 @@ fun OnBoardingScreen(viewModel: OnBoardingViewModel = hiltViewModel()) {
             context.getActivity()?.run {
                 launchActivity(
                     packageName = context.packageName,
-                    className = "com.developersancho.jetrorty.navigation.MainActivity"
+                    className = "com.xavijimenezmulet.mobilechallenge.navigation.MainActivity"
                 ).also {
                     finish()
                 }
@@ -97,7 +97,8 @@ fun PagerScreen(onBoardingPage: OnBoardingPage) {
             text = onBoardingPage.title,
             fontSize = MobileChallengeTypography.displayMedium.fontSize,
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = MobileChallengeColors.onTertiary
         )
         Text(
             modifier = Modifier
@@ -107,7 +108,8 @@ fun PagerScreen(onBoardingPage: OnBoardingPage) {
             text = onBoardingPage.description,
             fontSize = MobileChallengeTypography.headlineMedium.fontSize,
             fontWeight = FontWeight.Medium,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = MobileChallengeColors.onTertiary
         )
     }
 }

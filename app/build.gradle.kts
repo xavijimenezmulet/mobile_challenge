@@ -1,8 +1,9 @@
 plugins {
     id(Depends.application)
-    id("kotlin-android")
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
+    id(Depends.kotlinAndroid)
+    id(Depends.kotlinKapt)
+    id(Depends.hiltPlugin)
+    id(Depends.symbolPlugin)
 }
 
 android {
@@ -19,12 +20,16 @@ android {
 
     buildTypes {
         getByName(ConfigData.debug) {
+            buildConfigField("String","BASE_URL", Configs.Debug.BaseUrl)
+            buildConfigField("String","DB_NAME", Configs.Debug.DbName)
             signingConfig = signingConfigs.getByName(ConfigData.debug)
         }
         getByName(ConfigData.release) {
             isDebuggable = false
             isMinifyEnabled = true
             isShrinkResources = true
+            buildConfigField("String","BASE_URL", Configs.Release.BaseUrl)
+            buildConfigField("String","DB_NAME", Configs.Release.DbName)
             proguardFiles(
                 getDefaultProguardFile(ConfigData.proguardTxt), ConfigData.proguardPro
             )
@@ -42,6 +47,21 @@ android {
         freeCompilerArgs = listOf(ConfigData.xInlineClasses)
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.0"
+    }
+
+    packagingOptions {
+        resources.excludes.apply {
+            add("META-INF/AL2.0")
+            add("META-INF/LGPL2.1")
+        }
+    }
+
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
@@ -55,8 +75,20 @@ android {
     }
 }
 
+android.applicationVariants.all {
+    val variantName = name
+    kotlin.sourceSets {
+        getByName("main") {
+            kotlin.srcDir(File("build/generated/ksp/$variantName/kotlin"))
+        }
+    }
+}
+
 dependencies {
     addModuleDependencies()
     addCommonDependencies()
     addHiltDependency()
+    addComposeDependencies()
+    addNavigationDependencies()
+
 }

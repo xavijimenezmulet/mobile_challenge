@@ -1,7 +1,9 @@
 package com.xavijimenezmulet.mobilechallenge.di
 
 import android.content.Context
-import com.developersancho.framework.pref.CacheManager
+import com.xavijimenezmulet.framework.base.application.NetworkConfig
+import com.xavijimenezmulet.framework.base.pref.CacheManager
+import com.xavijimenezmulet.mobilechallenge.application.MCNetworkConfig
 import com.xavijimenezmulet.mobilechallenge.application.MobileChallengeApplication
 import dagger.Module
 import dagger.Provides
@@ -28,5 +30,11 @@ class AppModule {
     @Singleton
     fun provideCacheManager(@ApplicationContext context: Context): CacheManager {
         return CacheManager(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideNetworkConfig(): NetworkConfig {
+        return MCNetworkConfig()
     }
 }

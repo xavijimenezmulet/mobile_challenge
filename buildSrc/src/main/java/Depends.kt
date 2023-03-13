@@ -10,6 +10,7 @@ object Depends {
     const val kotlinAndroid = "org.jetbrains.kotlin.android"
     const val kotlinKapt = "kotlin-kapt"
     const val hiltPlugin = "dagger.hilt.android.plugin"
+    const val symbolPlugin = "com.google.devtools.ksp"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
@@ -62,7 +63,6 @@ object Depends {
     const val materialIconExtended =
         "androidx.compose.material:material-icons-extended:${Versions.materialIcons}"
     const val tooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
-    const val composeCompiler = "androidx.compose.compiler:compiler::${Versions.compose}"
     const val activity = "androidx.activity:activity-compose:${Versions.activityCompose}"
     const val viewModel =
         "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModelCompose}"
@@ -88,6 +88,28 @@ object Depends {
     const val datastore = "androidx.datastore:datastore:${Versions.datastore}"
     const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
     const val securityPref = "androidx.security:security-crypto-ktx:${Versions.securityPref}"
-    const val savedState = "androidx.savedstate:savedstate-ktx:1.2.0"
-    const val navigationCompose = "androidx.navigation:navigation-compose:2.5.3"
+    const val savedState = "androidx.savedstate:savedstate-ktx:${Versions.savedState}"
+    const val navigationCompose =
+        "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
+    const val destinationCore =
+        "io.github.raamcosta.compose-destinations:core:${Versions.destination}"
+    const val destinationKsp =
+        "io.github.raamcosta.compose-destinations:ksp:${Versions.destination}"
+    const val destinationAnimation =
+        "io.github.raamcosta.compose-destinations:animations-core:${Versions.destination}"
+    const val kotlinSymbolProcessing =
+        "com.google.devtools.ksp:symbol-processing-gradle-plugin:${Versions.kotlinSymbolProcessing}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+    const val moshiCodegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshiCodegen}"
+    const val moshiLazyAdapter =
+        "com.serjltt.moshi:moshi-lazy-adapters:${Versions.moshiLazyAdapter}"
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.retrofitMoshi}"
+    const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
+    const val loggingInterceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
+    const val chuckerDebug = "com.github.chuckerteam.chucker:library:${Versions.chuckerDebug}"
+    const val chuckerRelease =
+        "com.github.chuckerteam.chucker:library-no-op:${Versions.chuckerRelease}"
 }

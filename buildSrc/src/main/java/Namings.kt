@@ -21,4 +21,6 @@ object Namings {
     const val usecaseModule = "${rootPackage}usecase"
     const val splashModule = "${rootPackage}splash"
     const val welcomeModule = "${rootPackage}welcome"
+    const val homeModule = "${rootPackage}home"
+    const val productsModule = "${rootPackage}products"
 }

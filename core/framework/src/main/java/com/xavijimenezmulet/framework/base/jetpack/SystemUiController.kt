@@ -5,6 +5,11 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import com.google.accompanist.systemuicontroller.SystemUiController
 
+/**
+ *   @author xavierjimenez
+ *   @since 13/3/23
+ *   @email xavijimenezmulet@macaqueconsulting.com
+ */
 @Composable
 fun SetupSystemUi(
     systemUiController: SystemUiController,

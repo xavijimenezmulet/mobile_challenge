@@ -1,11 +1,17 @@
 package com.xavijimenezmulet.mobilechallenge.di
 
-import com.developersancho.framework.pref.CacheManager
+import android.content.Context
+import com.xavijimenezmulet.framework.base.pref.CacheManager
 import com.xavijimenezmulet.mobilechallenge.provider.AppLanguageProvider
+import com.xavijimenezmulet.mobilechallenge.provider.AppResourceProvider
+import com.xavijimenezmulet.mobilechallenge.provider.AppThemeProvider
 import com.xavijimenezmulet.provider.LanguageProvider
+import com.xavijimenezmulet.provider.ResourceProvider
+import com.xavijimenezmulet.provider.ThemeProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -17,6 +23,18 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class ProviderModule {
+
+    @Provides
+    @Singleton
+    fun provideThemeProvider(@ApplicationContext context: Context): ThemeProvider {
+        return AppThemeProvider(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideAppResourceProvider(@ApplicationContext context: Context): ResourceProvider {
+        return AppResourceProvider(context)
+    }
 
     @Provides
     @Singleton

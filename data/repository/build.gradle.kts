@@ -9,6 +9,9 @@ configureAndroidLibrary(Namings.repositoryModule)
 dependencies {
     FRAMEWORK
     CONSTANTS
+    LOCAL
+    REMOTE
+    MODEL
     addCommonDependencies()
     addHiltDependency()
     implementation(Depends.datastorePref)

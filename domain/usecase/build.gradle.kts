@@ -8,6 +8,8 @@ plugins {
 configureAndroidLibrary(Namings.usecaseModule)
 
 dependencies {
+    ENTITY
+    MODEL
     REPOSITORY
     FRAMEWORK
     addCommonDependencies()

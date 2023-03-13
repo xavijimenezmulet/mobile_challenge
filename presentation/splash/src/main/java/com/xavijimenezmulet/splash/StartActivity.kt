@@ -41,7 +41,12 @@ class StartActivity : ComponentActivity() {
     }
 
     private fun navigateMainActivity() {
-
+        launchActivity(
+            packageName = packageName,
+            className = "com.xavijimenezmulet.mobilechallenge.navigation.MainActivity"
+        ).also {
+            finish()
+        }
     }
 
     private fun navigateWelcomeActivity() {

@@ -123,6 +123,19 @@ fun DependencyHandler.addHiltDependency() {
     androidTestImplementation(Depends.hiltAndroidTesting)
 }
 
+fun DependencyHandler.addNetworkDependency() {
+    implementation(Depends.moshi)
+    ksp(Depends.moshiCodegen)
+    implementation(Depends.moshiLazyAdapter)
+    implementation(Depends.retrofit)
+    implementation(Depends.retrofitMoshi)
+    implementation(Depends.okhttp)
+    implementation(Depends.loggingInterceptor)
+    testImplementation(Depends.okhttp)
+    debugImplementation(Depends.chuckerDebug)
+    releaseImplementation(Depends.chuckerRelease)
+}
+
 fun DependencyHandler.addTestDependencies() {
     testImplementation(Depends.junit)
     testImplementation(Depends.hamcrest)
@@ -174,10 +187,21 @@ fun DependencyHandler.addComposeDependencies() {
     debugImplementation(Depends.testManifest)
 }
 
+fun DependencyHandler.addNavigationDependencies() {
+    implementation(Depends.destinationAnimation)
+    implementation(Depends.destinationCore)
+    ksp(Depends.destinationKsp)
+}
+
 fun DependencyHandler.addPreferenceDependencies() {
     implementation(Depends.datastore)
     implementation(Depends.datastorePref)
     implementation(Depends.securityPref)
+}
+
+fun DependencyHandler.addStorageDependencies() {
+    implementation(Depends.roomKtx)
+    ksp(Depends.roomCompiler)
 }
 
 fun DependencyHandler.addModuleDependencies() {
@@ -196,6 +220,8 @@ fun DependencyHandler.addModuleDependencies() {
     USE_CASE
     SPLASH
     WELCOME
+    HOME
+    PRODUCTS
 }
 
 val DependencyHandler.COMPONENT
@@ -228,3 +254,7 @@ val DependencyHandler.SPLASH
     get() = implementation(project(mapOf("path" to Modules.presentationSplash)))
 val DependencyHandler.WELCOME
     get() = implementation(project(mapOf("path" to Modules.presentationWelcome)))
+val DependencyHandler.HOME
+    get() = implementation(project(mapOf("path" to Modules.presentationHome)))
+val DependencyHandler.PRODUCTS
+    get() = implementation(project(mapOf("path" to Modules.presentationProducts)))

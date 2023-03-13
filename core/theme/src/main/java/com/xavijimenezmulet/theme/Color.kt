@@ -1,5 +1,8 @@
 package com.xavijimenezmulet.theme
 
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 val Black = Color(0xFF000000)
@@ -45,3 +48,6 @@ val unselectedBottomItemColor = Gray500
 
 val navigationBackIconDark = White
 val navigationBackIconLight = Black
+
+val ColorScheme.navigationBackIconColor: Color
+    @Composable get() = if (isSystemInDarkTheme()) navigationBackIconDark else navigationBackIconLight

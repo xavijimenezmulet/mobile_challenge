@@ -2,6 +2,7 @@ plugins {
     id(Depends.library)
     id(Depends.kotlinAndroid)
     id(Depends.kotlinKapt)
+    id(Depends.symbolPlugin)
 }
 
 configureAndroidLibrary(Namings.frameworkModule)
@@ -15,4 +16,6 @@ dependencies {
     addComposeDependencies()
     addPreferenceDependencies()
     implementation(Depends.hiltAndroidTesting)
+    addStorageDependencies()
+    addNetworkDependency()
 }

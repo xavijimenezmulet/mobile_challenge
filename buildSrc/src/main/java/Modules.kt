@@ -20,4 +20,6 @@ object Modules {
   const val domainUseCase = ":domain:usecase"
   const val presentationSplash = ":presentation:splash"
   const val presentationWelcome = ":presentation:welcome"
+  const val presentationHome = ":presentation:home"
+  const val presentationProducts = ":presentation:products"
 }

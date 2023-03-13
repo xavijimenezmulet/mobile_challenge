@@ -8,4 +8,5 @@ package com.xavijimenezmulet.constants
 object Constants {
     const val PREFERENCE_WELCOME_REF = "welcome_pref"
     const val ON_BOARDING_COMPLETED = "on_boarding_completed"
+    const val PRODUCT_IMAGE_URL = "https://i.ytimg.com/vi/7SSu0KtXI2c/maxresdefault.jpg"
 }

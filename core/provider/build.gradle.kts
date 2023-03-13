@@ -5,7 +5,10 @@ plugins {
 
 configureAndroidLibrary(Namings.providerModule)
 
+addComposeConfig()
+
 dependencies {
     UTILS
     addCommonDependencies()
+    addComposeDependencies()
 }

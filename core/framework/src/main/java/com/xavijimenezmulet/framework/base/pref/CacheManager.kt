@@ -1,4 +1,4 @@
-package com.developersancho.framework.pref
+package com.xavijimenezmulet.framework.base.pref
 
 import android.content.Context
 import android.content.SharedPreferences

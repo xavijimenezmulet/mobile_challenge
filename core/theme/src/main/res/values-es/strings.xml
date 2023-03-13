@@ -11,5 +11,10 @@
     <string name="on_boarding_step_discount_title">¡2x1 y mucho más!</string>
     <string name="on_boarding_step_discount_body">Puedes conseguir 2x1 en algunos productos y por supuesto a mayor cantidad menor será el precio.</string>
 
+    <string name="bottom_menu_products">Productos</string>
+
+    <string name="app_exit_label">Pulsa VOLVER otra vez para salir</string>
+    <string name="text_no_data_found">No se encontraron resultados.</string>
+    <string name="text_retry">Reintentar</string>
     <string name="text_finish">Finalizar</string>
 </resources>

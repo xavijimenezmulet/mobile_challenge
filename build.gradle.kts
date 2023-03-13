@@ -7,6 +7,7 @@ buildscript {
         classpath (Depends.gradlePlugin)
         classpath (Depends.kotlinPlugin)
         classpath (Depends.hiltGradlePlugin)
+        classpath(Depends.kotlinSymbolProcessing)
     }
 }
 

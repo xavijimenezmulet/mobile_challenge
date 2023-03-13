@@ -5,6 +5,11 @@ plugins {
 
 configureAndroidLibrary(Namings.componentModule)
 
+addComposeConfig()
+
 dependencies {
+    THEME
+    FRAMEWORK
     addCommonDependencies()
+    addComposeDependencies()
 }

@@ -8,9 +8,10 @@ import androidx.compose.runtime.Composable
 private val DarkColorPalette = darkColorScheme(
     primary = Blue,
     inversePrimary = Blue,
-    onPrimary = White,
+    onPrimary = Black,
     secondary = Red,
     tertiary = RedDark,
+    onTertiary = White,
     onSecondary = Black,
 
     background = BackgroundDark,
@@ -24,9 +25,10 @@ private val DarkColorPalette = darkColorScheme(
 private val LightColorPalette = lightColorScheme(
     primary = White,
     inversePrimary = Red,
-    onPrimary = Black,
+    onPrimary = White,
     secondary = Red,
     tertiary = Red,
+    onTertiary = Black,
     onSecondary = Black,
 
     background = BackgroundLight,
