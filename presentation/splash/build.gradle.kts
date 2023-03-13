@@ -12,6 +12,7 @@ dependencies {
     FRAMEWORK
     THEME
     TEST_UTILS
+    UTILS
     addCommonDependencies()
     addHiltDependency()
     implementation(Depends.splashscreen)

@@ -22,6 +22,7 @@ fun Project.configureAndroidLibrary(name: String) {
             testInstrumentationRunner = Depends.testRunnerPackage
             consumerProguardFiles(ConfigData.consumerRules)
         }
+
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_11
             targetCompatibility = JavaVersion.VERSION_11
@@ -33,6 +34,25 @@ fun Project.configureAndroidLibrary(name: String) {
 
         kotlinOptions {
             jvmTarget = Versions.jvmTarget
+        }
+    }
+}
+
+fun Project.addComposeConfig() {
+    androidLibrary {
+        buildFeatures {
+            compose = true
+        }
+
+        composeOptions {
+            kotlinCompilerExtensionVersion = "1.4.0"
+        }
+
+        packagingOptions {
+            resources.excludes.apply {
+                add("META-INF/AL2.0")
+                add("META-INF/LGPL2.1")
+            }
         }
     }
 }

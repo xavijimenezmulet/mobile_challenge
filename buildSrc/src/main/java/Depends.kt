@@ -47,8 +47,47 @@ object Depends {
     const val coroutinesTest =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
     const val testTruth = "androidx.test.ext:truth:${Versions.testTruth}"
-    const val testJunit4 = "androidx.compose.ui:ui-test-junit4:${Versions.testJunit4}"
+    const val testJunit4 = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
     const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTesting}"
-    const val testManifest = "androidx.compose.ui:ui-test-manifest:${Versions.testManifest}"
+    const val fragmentKtx = "androidx.fragment:fragment:${Versions.fragmentKtx}"
+    const val testManifest = "androidx.compose.ui:ui-test-manifest:${Versions.compose}"
     const val testTurbine = "app.cash.turbine:turbine:${Versions.testTurbine}"
+    const val ui = "androidx.compose.ui:ui:${Versions.compose}"
+    const val material3Compose = "androidx.compose.material3:material3:${Versions.material3}"
+    const val preview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
+    const val runtime = "androidx.compose.runtime:runtime:${Versions.compose}"
+    const val foundation = "androidx.compose.foundation:foundation:${Versions.foundation}"
+    const val materialIconCore =
+        "androidx.compose.material:material-icons-core:${Versions.materialIcons}"
+    const val materialIconExtended =
+        "androidx.compose.material:material-icons-extended:${Versions.materialIcons}"
+    const val tooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
+    const val composeCompiler = "androidx.compose.compiler:compiler::${Versions.compose}"
+    const val activity = "androidx.activity:activity-compose:${Versions.activityCompose}"
+    const val viewModel =
+        "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.viewModelCompose}"
+    const val constraintLayout =
+        "androidx.constraintlayout:constraintlayout-compose:${Versions.constraintCompose}"
+    const val lottie = "com.airbnb.android:lottie-compose:${Versions.lottieCompose}"
+    const val paging = "androidx.paging:paging-compose:${Versions.pagingCompose}"
+    const val coil = "io.coil-kt:coil-compose:${Versions.coil}"
+    const val swiperefresh = "com.google.accompanist:accompanist-swiperefresh:${Versions.swipe}"
+    const val systemuicontroller =
+        "com.google.accompanist:accompanist-systemuicontroller:${Versions.systemController}"
+    const val insets = "com.google.accompanist:accompanist-insets:${Versions.systemController}"
+    const val placeholderMaterial =
+        "com.google.accompanist:accompanist-placeholder-material:${Versions.systemController}"
+    const val navigationMaterial =
+        "com.google.accompanist:accompanist-navigation-material:${Versions.systemController}"
+    const val permissions =
+        "com.google.accompanist:accompanist-permissions:${Versions.systemController}"
+    const val pager = "com.google.accompanist:accompanist-pager:${Versions.systemController}"
+    const val indicators =
+        "com.google.accompanist:accompanist-pager-indicators:${Versions.systemController}"
+    const val webview = "com.google.accompanist:accompanist-webview:${Versions.webview}"
+    const val datastore = "androidx.datastore:datastore:${Versions.datastore}"
+    const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+    const val securityPref = "androidx.security:security-crypto-ktx:${Versions.securityPref}"
+    const val savedState = "androidx.savedstate:savedstate-ktx:1.2.0"
+    const val navigationCompose = "androidx.navigation:navigation-compose:2.5.3"
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Desafío móvil</string>
+
+    <string name="on_boarding_step_buy_products_title">Desafío móvil</string>
+    <string name="on_boarding_step_buy_products_body">Además de brindar servicios de transporte excepcionales, también opera una tienda física que vende productos.</string>
+
+    <string name="on_boarding_step_products_title">Productos</string>
+    <string name="on_boarding_step_products_body">Podrás ver infinidad de productos y podrás conseguirlos en un solo clic.</string>
+
+    <string name="on_boarding_step_discount_title">¡2x1 y mucho más!</string>
+    <string name="on_boarding_step_discount_body">Puedes conseguir 2x1 en algunos productos y por supuesto a mayor cantidad menor será el precio.</string>
+
+    <string name="text_finish">Finalizar</string>
+</resources>

@@ -7,12 +7,16 @@ plugins {
 
 configureAndroidLibrary(Namings.welcomeModule)
 
+addComposeConfig()
+
 dependencies {
     USE_CASE
     FRAMEWORK
     THEME
     TEST_UTILS
+    PROVIDER
+    UTILS
     addCommonDependencies()
     addHiltDependency()
-    implementation(Depends.splashscreen)
+    addComposeDependencies()
 }

@@ -7,4 +7,5 @@ configureAndroidLibrary(Namings.utilsModule)
 
 dependencies {
     addCommonDependencies()
+    implementation(Depends.moshi)
 }

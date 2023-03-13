@@ -6,9 +6,13 @@ plugins {
 
 configureAndroidLibrary(Namings.frameworkModule)
 
+addComposeConfig()
+
 dependencies {
     UTILS
     addCommonDependencies()
     addHiltDependency()
+    addComposeDependencies()
+    addPreferenceDependencies()
     implementation(Depends.hiltAndroidTesting)
 }

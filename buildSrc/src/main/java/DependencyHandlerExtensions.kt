@@ -106,6 +106,8 @@ fun DependencyHandler.addCommonImplDependencies() {
     implementation(Depends.coroutineAndroid)
     implementation(Depends.lifecycleRuntime)
     implementation(Depends.activityKtx)
+    implementation(Depends.fragmentKtx)
+    implementation(Depends.savedState)
     implementation(Depends.timber)
     implementation(Depends.androidPaging)
     implementation("com.squareup:javapoet:1.13.0")
@@ -143,6 +145,41 @@ fun DependencyHandler.addTestDependencies() {
     debugImplementation(Depends.testManifest)
 }
 
+fun DependencyHandler.addComposeDependencies() {
+    implementation(Depends.ui)
+    implementation(Depends.material3Compose)
+    implementation(Depends.preview)
+    implementation(Depends.runtime)
+    implementation(Depends.foundation)
+    implementation(Depends.materialIconCore)
+    implementation(Depends.materialIconExtended)
+    implementation(Depends.activity)
+    implementation(Depends.viewModel)
+    implementation(Depends.navigationCompose)
+    implementation(Depends.constraintLayout)
+    implementation(Depends.lottie)
+    implementation(Depends.paging)
+    implementation(Depends.coil)
+    implementation(Depends.swiperefresh)
+    implementation(Depends.systemuicontroller)
+    implementation(Depends.insets)
+    implementation(Depends.placeholderMaterial)
+    implementation(Depends.navigationMaterial)
+    implementation(Depends.permissions)
+    implementation(Depends.pager)
+    implementation(Depends.indicators)
+    implementation(Depends.webview)
+    androidTestImplementation(Depends.testJunit4)
+    debugImplementation(Depends.tooling)
+    debugImplementation(Depends.testManifest)
+}
+
+fun DependencyHandler.addPreferenceDependencies() {
+    implementation(Depends.datastore)
+    implementation(Depends.datastorePref)
+    implementation(Depends.securityPref)
+}
+
 fun DependencyHandler.addModuleDependencies() {
     COMPONENT
     CONSTANTS
@@ -158,6 +195,7 @@ fun DependencyHandler.addModuleDependencies() {
     ENTITY
     USE_CASE
     SPLASH
+    WELCOME
 }
 
 val DependencyHandler.COMPONENT
@@ -188,3 +226,5 @@ val DependencyHandler.USE_CASE
     get() = implementation(project(mapOf("path" to Modules.domainUseCase)))
 val DependencyHandler.SPLASH
     get() = implementation(project(mapOf("path" to Modules.presentationSplash)))
+val DependencyHandler.WELCOME
+    get() = implementation(project(mapOf("path" to Modules.presentationWelcome)))

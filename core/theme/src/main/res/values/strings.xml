@@ -7,4 +7,15 @@
 
     <!-- We default using the system default -->
     <string name="pref_theme_default_value" translatable="false">@string/pref_theme_system_value</string>
+
+    <string name="on_boarding_step_buy_products_title">Mobile Challenge</string>
+    <string name="on_boarding_step_buy_products_body">Besides providing exceptional transportation services, Also runs a physical store which sells Products.</string>
+
+    <string name="on_boarding_step_products_title">Products</string>
+    <string name="on_boarding_step_products_body">You will be able to see countless products and you will be able to get them in a single click.</string>
+
+    <string name="on_boarding_step_discount_title">2 for 1 and much more</string>
+    <string name="on_boarding_step_discount_body">You can get 2 for 1 on some products and of course the higher the quantity, the lower the price.</string>
+
+    <string name="text_finish">Finish</string>
 </resources>

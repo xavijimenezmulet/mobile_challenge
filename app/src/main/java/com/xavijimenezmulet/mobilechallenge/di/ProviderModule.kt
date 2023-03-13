@@ -1,12 +1,11 @@
 package com.xavijimenezmulet.mobilechallenge.di
 
-import android.content.Context
 import com.developersancho.framework.pref.CacheManager
-import com.xavijimenezmulet.mobilechallenge.application.MobileChallengeApplication
+import com.xavijimenezmulet.mobilechallenge.provider.AppLanguageProvider
+import com.xavijimenezmulet.provider.LanguageProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -17,16 +16,11 @@ import javax.inject.Singleton
  */
 @Module
 @InstallIn(SingletonComponent::class)
-class AppModule {
-    @Provides
-    @Singleton
-    fun provideApplication(): MobileChallengeApplication {
-        return MobileChallengeApplication()
-    }
+class ProviderModule {
 
     @Provides
     @Singleton
-    fun provideCacheManager(@ApplicationContext context: Context): CacheManager {
-        return CacheManager(context)
+    fun provideAppLanguageProvider(cacheManager: CacheManager): LanguageProvider {
+        return AppLanguageProvider(cacheManager)
     }
 }
