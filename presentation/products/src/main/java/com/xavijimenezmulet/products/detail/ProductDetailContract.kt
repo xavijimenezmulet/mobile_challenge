@@ -8,5 +8,6 @@ data class ProductDetailViewState(
 
 sealed class ProductDetailEvent {
     data class LoadProduct(val id: Int) : ProductDetailEvent()
-    data class AddToCart(val code: String) : ProductDetailEvent()
+    data class AddToCart(val product: Product) : ProductDetailEvent()
+    object ForceAddToCart : ProductDetailEvent()
 }

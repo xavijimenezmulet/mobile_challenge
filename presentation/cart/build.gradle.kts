@@ -6,25 +6,29 @@ plugins {
     id(Depends.symbolPlugin)
 }
 
-configureAndroidLibrary(Namings.homeModule)
+configureAndroidLibrary(Namings.cartModule)
 
 addComposeConfig()
 
 ksp {
     arg("compose-destinations.mode", "navgraphs")
-    arg("compose-destinations.moduleName", "home")
+    arg("compose-destinations.moduleName", "cart")
+}
+
+android {
+
 }
 
 dependencies {
+    CONSTANTS
     USE_CASE
     FRAMEWORK
     THEME
     TEST_UTILS
     PROVIDER
     UTILS
-    PRODUCTS
-    CART
-    SETTINGS
+    ENTITY
+    COMPONENT
     addCommonDependencies()
     addHiltDependency()
     addComposeDependencies()

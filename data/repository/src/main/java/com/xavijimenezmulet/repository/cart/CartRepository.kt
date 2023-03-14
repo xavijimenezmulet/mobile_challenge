@@ -3,6 +3,7 @@ package com.xavijimenezmulet.repository.cart
 import androidx.annotation.VisibleForTesting
 import com.xavijimenezmulet.entity.cart.Cart
 import com.xavijimenezmulet.local.dao.cart.CartDao
+import com.xavijimenezmulet.model.dto.cart.toCartDtoList
 import com.xavijimenezmulet.model.dto.cart.toCartItem
 import com.xavijimenezmulet.model.dto.cart.toCartItemEntity
 import com.xavijimenezmulet.model.local.cart.CartItemClickEntity
@@ -21,8 +22,8 @@ constructor(
     @get:VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     internal val dao: CartDao
 ) {
-    fun getCartItemList(): Flow<List<CartItemClickEntity>> = flow {
-        emit(dao.getCartItemList())
+    fun getCartItemList(): Flow<List<Cart>> = flow {
+        emit(dao.getCartItemList().toCartDtoList())
     }
 
     suspend fun getCartItem(code: String): Cart? = dao.getCartItem(code)?.toCartItem()

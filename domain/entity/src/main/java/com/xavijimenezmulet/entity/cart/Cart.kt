@@ -7,6 +7,8 @@ package com.xavijimenezmulet.entity.cart
  */
 class Cart(
     val code: String,
+    val name: String,
     val count: Int,
-    val promo: String
+    val promo: String,
+    val price: Float
 )

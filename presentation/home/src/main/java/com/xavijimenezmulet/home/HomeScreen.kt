@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.google.accompanist.insets.navigationBarsHeight
 import com.google.accompanist.insets.navigationBarsPadding
 import com.ramcosta.composedestinations.annotation.Destination
+import com.xavijimenezmulet.cart.CartScreen
 import com.xavijimenezmulet.products.list.ProductsScreen
 import com.xavijimenezmulet.provider.NavigationProvider
 import com.xavijimenezmulet.settings.SettingsScreen
@@ -54,17 +55,15 @@ fun HomeScreen(navigator: NavigationProvider) {
                         navigator = navigator,
                         bottomSheetState = bottomSheetState
                     )
+                    BottomBarHomeItem.CART -> CartScreen(
+                        modifier = modifier,
+                        navigator = navigator,
+                        bottomSheetState = bottomSheetState
+                    )
                     BottomBarHomeItem.SETTINGS -> SettingsScreen(
                         modifier = modifier,
                         navigator = navigator
                     )
-                    else -> {
-                        ProductsScreen(
-                            modifier = modifier,
-                            navigator = navigator,
-                            bottomSheetState = bottomSheetState
-                        )
-                    }
                 }
             }
         )

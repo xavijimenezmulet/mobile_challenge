@@ -223,6 +223,7 @@ fun DependencyHandler.addModuleDependencies() {
     HOME
     PRODUCTS
     SETTINGS
+    CART
 }
 
 val DependencyHandler.COMPONENT
@@ -261,3 +262,5 @@ val DependencyHandler.PRODUCTS
     get() = implementation(project(mapOf("path" to Modules.presentationProducts)))
 val DependencyHandler.SETTINGS
     get() = implementation(project(mapOf("path" to Modules.presentationSettings)))
+val DependencyHandler.CART
+    get() = implementation(project(mapOf("path" to Modules.presentationCart)))

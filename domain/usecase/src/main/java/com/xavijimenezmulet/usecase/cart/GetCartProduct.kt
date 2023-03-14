@@ -2,6 +2,7 @@ package com.xavijimenezmulet.usecase.cart
 
 import androidx.annotation.VisibleForTesting
 import com.xavijimenezmulet.entity.cart.Cart
+import com.xavijimenezmulet.entity.products.Product
 import com.xavijimenezmulet.framework.base.network.DataState
 import com.xavijimenezmulet.framework.base.usecase.DataStateUseCase
 import com.xavijimenezmulet.repository.cart.CartRepository
@@ -21,15 +22,15 @@ constructor(
 ) : DataStateUseCase<GetCartProduct.Params, Cart>() {
 
     data class Params(
-        val code: String = ""
+        val product: Product? = null
     )
 
     override suspend fun FlowCollector<DataState<Cart>>.execute(params: Params) {
-        val product = cartRepository.getCartItem(code = params.code)
+        val product = cartRepository.getCartItem(code = params.product?.code.orEmpty())
         product?.let {
             emit(DataState.Success(product))
         } ?: run {
-            emit(DataState.Error(Throwable()))
+            emit(DataState.Error(Throwable("force")))
         }
     }
 }

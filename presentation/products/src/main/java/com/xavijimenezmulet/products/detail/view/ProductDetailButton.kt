@@ -46,9 +46,8 @@ fun ProductDetailButton(
         Button(
             modifier = Modifier.fillMaxWidth(),
             onClick = {
-                viewModel.onTriggerEvent(ProductDetailEvent.AddToCart(product.code))
+                viewModel.onTriggerEvent(ProductDetailEvent.AddToCart(product))
                 context.toast(infoText)
-                navigator?.navigateUp()
             },
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Red700

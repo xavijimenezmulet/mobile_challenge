@@ -1,6 +1,7 @@
 package com.xavijimenezmulet.component.widget
 
 import android.content.res.Configuration
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -12,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.xavijimenezmulet.theme.R
 import com.xavijimenezmulet.component.LottieView
+import com.xavijimenezmulet.theme.MobileChallengeColors
 import com.xavijimenezmulet.theme.MobileChallengeTheme
 import com.xavijimenezmulet.theme.MobileChallengeTypography
 
@@ -24,7 +26,7 @@ import com.xavijimenezmulet.theme.MobileChallengeTypography
 fun LottieEmptyView(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
-            .fillMaxSize(),
+            .fillMaxSize().background(MobileChallengeColors.background),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -38,6 +40,7 @@ fun LottieEmptyView(modifier: Modifier = Modifier) {
             text = stringResource(id = R.string.text_no_data_found),
             style = MobileChallengeTypography.displaySmall,
             textAlign = TextAlign.Center,
+            color = MobileChallengeColors.onTertiary,
             modifier = modifier
                 .fillMaxWidth()
         )

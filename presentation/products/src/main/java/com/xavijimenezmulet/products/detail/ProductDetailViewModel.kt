@@ -2,6 +2,7 @@ package com.xavijimenezmulet.products.detail
 
 
 import com.xavijimenezmulet.entity.cart.Cart
+import com.xavijimenezmulet.entity.products.Product
 import com.xavijimenezmulet.framework.base.mvi.BaseViewState
 import com.xavijimenezmulet.framework.base.mvi.MviViewModel
 import com.xavijimenezmulet.usecase.cart.AddToCartProduct
@@ -19,11 +20,13 @@ class ProductDetailViewModel @Inject constructor(
 ) : MviViewModel<BaseViewState<ProductDetailViewState>, ProductDetailEvent>() {
 
     var cart: Cart? = null
+    private lateinit var currentProduct: Product
 
     override fun onTriggerEvent(eventType: ProductDetailEvent) {
         when (eventType) {
             is ProductDetailEvent.LoadProduct -> onLoadDetail(eventType.id)
-            is ProductDetailEvent.AddToCart -> onAddToCart(eventType.code)
+            is ProductDetailEvent.AddToCart -> onAddToCart(eventType.product)
+            is ProductDetailEvent.ForceAddToCart -> onForceAddToCart()
         }
     }
 
@@ -34,17 +37,19 @@ class ProductDetailViewModel @Inject constructor(
         }
     }
 
-    private fun onAddToCart(code: String) = safeLaunch {
+    private fun onAddToCart(product: Product) = safeLaunch {
         cart = null
-        val params = GetCartProduct.Params(code = code)
+        currentProduct = product
+        val params = GetCartProduct.Params(product = currentProduct)
         execute(getCartProduct(params)) { dto ->
             cart = dto
-            onForceAddToCart(code)
+            onForceAddToCart()
         }
     }
 
-    private fun onForceAddToCart(code: String) = safeLaunch {
-        val params = AddToCartProduct.Params(cart = AddToCartUtils.getCartForAdd(cart, code))
+    private fun onForceAddToCart() = safeLaunch {
+        val params =
+            AddToCartProduct.Params(cart = AddToCartUtils.getCartForAdd(cart, currentProduct))
         call(addToCartProduct(params = params))
     }
 }

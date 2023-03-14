@@ -24,4 +24,5 @@ object Namings {
     const val homeModule = "${rootPackage}home"
     const val productsModule = "${rootPackage}products"
     const val settingsModule = "${rootPackage}settings"
+    const val cartModule = "${rootPackage}cart"
 }
