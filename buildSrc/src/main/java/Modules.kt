@@ -22,4 +22,5 @@ object Modules {
   const val presentationWelcome = ":presentation:welcome"
   const val presentationHome = ":presentation:home"
   const val presentationProducts = ":presentation:products"
+  const val presentationSettings = ":presentation:settings"
 }

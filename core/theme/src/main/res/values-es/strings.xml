@@ -12,9 +12,20 @@
     <string name="on_boarding_step_discount_body">Puedes conseguir 2x1 en algunos productos y por supuesto a mayor cantidad menor será el precio.</string>
 
     <string name="bottom_menu_products">Productos</string>
+    <string name="bottom_menu_settings">Ajustes</string>
 
+    <string name="text_theme_mode">Modo</string>
+    <string name="text_rate_app">Puntúa la App</string>
+    <string name="text_share_app">Comparte la App</string>
+    <string name="text_term_and_privacy">Términos y Condiciones</string>
+    <string name="text_app_language">Idioma</string>
+    <string name="text_about">Sobre mí</string>
+    <string name="text_app_version">Versión de la App</string>
     <string name="app_exit_label">Pulsa VOLVER otra vez para salir</string>
     <string name="text_no_data_found">No se encontraron resultados.</string>
     <string name="text_retry">Reintentar</string>
     <string name="text_finish">Finalizar</string>
+
+    <string name="text_language_english">Inglés</string>
+    <string name="text_language_spanish">Español</string>
 </resources>

@@ -3,6 +3,7 @@ package com.xavijimenezmulet.mobilechallenge.navigation
 import com.ramcosta.composedestinations.spec.DestinationSpec
 import com.ramcosta.composedestinations.spec.NavGraphSpec
 import com.xavijimenezmulet.home.HomeNavGraph
+import com.xavijimenezmulet.settings.SettingsNavGraph
 
 /**
  *   @author xavierjimenez
@@ -17,6 +18,7 @@ object RootNavGraph : NavGraphSpec {
     override val startRoute = HomeNavGraph
 
     override val nestedNavGraphs = listOf(
-        HomeNavGraph
+        HomeNavGraph,
+        SettingsNavGraph
     )
 }

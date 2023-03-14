@@ -3,6 +3,7 @@
 package com.xavijimenezmulet.products
 
 import android.content.res.Configuration
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -85,7 +86,8 @@ private fun ProductsBody(
     ModalBottomSheetLayout(
         sheetContent = {},
         modifier = modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .background(MobileChallengeColors.background),
         sheetState = bottomSheetState,
         sheetContentColor = MobileChallengeColors.background,
         sheetShape = RectangleShape,

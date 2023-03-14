@@ -64,7 +64,7 @@ fun MCToolbarWithNavIcon(
             Icon(
                 rememberVectorPainter(Icons.Filled.ArrowBack),
                 contentDescription = null,
-                tint = MobileChallengeColors.navigationBackIconColor,
+                tint = MobileChallengeColors.onTertiary,
                 modifier = Modifier
                     .padding(8.dp)
                     .clickable { pressOnBack.invoke() }

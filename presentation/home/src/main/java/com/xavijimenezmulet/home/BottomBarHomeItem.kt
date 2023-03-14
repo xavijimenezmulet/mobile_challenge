@@ -28,7 +28,7 @@ enum class BottomBarHomeItem(
         icon = Icons.Filled.LocationCity
     ),
     SETTINGS(
-        title = R.string.bottom_menu_products,
+        title = R.string.bottom_menu_settings,
         icon = Icons.Filled.Settings
     );
 }

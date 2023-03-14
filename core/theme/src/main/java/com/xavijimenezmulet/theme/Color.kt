@@ -1,6 +1,7 @@
 package com.xavijimenezmulet.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.Colors
 import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -51,3 +52,9 @@ val navigationBackIconLight = Black
 
 val ColorScheme.navigationBackIconColor: Color
     @Composable get() = if (isSystemInDarkTheme()) navigationBackIconDark else navigationBackIconLight
+
+val ColorScheme.dividerColor: Color
+    @Composable get() = if (isSystemInDarkTheme()) DividerDark else DividerLight
+
+val ColorScheme.cardBackgroundColor: Color
+    @Composable get() = if (isSystemInDarkTheme()) CardDark else CardLight

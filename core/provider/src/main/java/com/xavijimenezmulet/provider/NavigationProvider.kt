@@ -8,4 +8,7 @@ package com.xavijimenezmulet.provider
 interface NavigationProvider {
     fun navigateUp()
     fun openProductDetail(id: Int)
+    fun openTermAndPrivacy()
+    fun openAppLanguage()
+    fun openAbout()
 }

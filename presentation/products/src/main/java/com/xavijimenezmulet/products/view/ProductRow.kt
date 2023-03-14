@@ -3,15 +3,16 @@
 package com.xavijimenezmulet.products.view
 
 import android.content.res.Configuration
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
+import androidx.compose.material3.Card
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
+import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -33,15 +34,20 @@ fun ProductRow(
     onDetailClick: () -> Unit = {}
 ) {
     Card(
-        onClick = onDetailClick,
         modifier = Modifier
+            .clickable {
+                onDetailClick()
+            }
             .fillMaxWidth()
             .height(100.dp)
             .padding(
                 vertical = 4.dp,
                 horizontal = 8.dp
             ),
-        elevation = 8.dp
+        elevation = CardDefaults.elevatedCardElevation(),
+        colors = CardDefaults.cardColors(
+            containerColor = MobileChallengeColors.surface
+        )
     ) {
         Row {
             AsyncImage(
@@ -64,22 +70,19 @@ fun ProductRow(
                     text = dto.name,
                     modifier = Modifier
                         .fillMaxWidth(),
-                    style = MobileChallengeTypography.titleMedium,
-                    color = MobileChallengeColors.onPrimary
+                    style = MobileChallengeTypography.titleMedium
                 )
                 Text(
                     text = dto.code,
                     modifier = Modifier
                         .fillMaxWidth(),
-                    style = MobileChallengeTypography.titleMedium,
-                    color = MobileChallengeColors.onPrimary
+                    style = MobileChallengeTypography.titleMedium
                 )
                 Text(
                     text = dto.price?.toCurrency().orEmpty(),
                     modifier = Modifier
                         .fillMaxWidth(),
-                    style = MobileChallengeTypography.titleLarge,
-                    color = MobileChallengeColors.onPrimary
+                    style = MobileChallengeTypography.titleLarge
                 )
             }
         }

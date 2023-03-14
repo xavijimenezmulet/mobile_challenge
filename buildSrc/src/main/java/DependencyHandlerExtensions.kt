@@ -222,6 +222,7 @@ fun DependencyHandler.addModuleDependencies() {
     WELCOME
     HOME
     PRODUCTS
+    SETTINGS
 }
 
 val DependencyHandler.COMPONENT
@@ -258,3 +259,5 @@ val DependencyHandler.HOME
     get() = implementation(project(mapOf("path" to Modules.presentationHome)))
 val DependencyHandler.PRODUCTS
     get() = implementation(project(mapOf("path" to Modules.presentationProducts)))
+val DependencyHandler.SETTINGS
+    get() = implementation(project(mapOf("path" to Modules.presentationSettings)))

@@ -1,7 +1,11 @@
 package com.xavijimenezmulet.mobilechallenge.provider
 
 import androidx.navigation.NavController
+import com.ramcosta.composedestinations.navigation.navigate
 import com.xavijimenezmulet.provider.NavigationProvider
+import com.xavijimenezmulet.settings.destinations.AboutScreenDestination
+import com.xavijimenezmulet.settings.destinations.LanguageScreenDestination
+import com.xavijimenezmulet.settings.destinations.TermsAndPrivacyScreenDestination
 
 /**
  *   @author xavierjimenez
@@ -18,5 +22,17 @@ class AppNavigationProvider constructor(
 
     override fun openProductDetail(id: Int) {
         navController.navigateUp()
+    }
+
+    override fun openTermAndPrivacy() {
+        navController.navigate(TermsAndPrivacyScreenDestination)
+    }
+
+    override fun openAppLanguage() {
+        navController.navigate(LanguageScreenDestination)
+    }
+
+    override fun openAbout() {
+        navController.navigate(AboutScreenDestination)
     }
 }

@@ -3,6 +3,7 @@
 package com.xavijimenezmulet.home
 
 import androidx.compose.animation.Crossfade
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
@@ -20,6 +21,7 @@ import com.google.accompanist.insets.navigationBarsPadding
 import com.ramcosta.composedestinations.annotation.Destination
 import com.xavijimenezmulet.products.ProductsScreen
 import com.xavijimenezmulet.provider.NavigationProvider
+import com.xavijimenezmulet.settings.SettingsScreen
 import com.xavijimenezmulet.theme.MobileChallengeColors
 import com.xavijimenezmulet.theme.RalewayFonts
 import com.xavijimenezmulet.theme.selectedBottomItemColor
@@ -45,12 +47,16 @@ fun HomeScreen(navigator: NavigationProvider) {
             scaffoldState = scaffoldState,
             bottomBar = { HomeBottomNavigation(bottomTab, setCurrentBottomTab) },
             content = {
-                val modifier = Modifier.padding(it)
+                val modifier = Modifier.padding(it).background(MobileChallengeColors.background)
                 when (bottomTab) {
                     BottomBarHomeItem.PRODUCTS -> ProductsScreen(
                         modifier = modifier,
                         navigator = navigator,
                         bottomSheetState = bottomSheetState
+                    )
+                    BottomBarHomeItem.SETTINGS -> SettingsScreen(
+                        modifier = modifier,
+                        navigator = navigator
                     )
                     else -> {
                         ProductsScreen(

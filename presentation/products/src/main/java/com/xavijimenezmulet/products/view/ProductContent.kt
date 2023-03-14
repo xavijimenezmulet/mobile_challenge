@@ -1,5 +1,8 @@
+@file:Suppress("DEPRECATION")
+
 package com.xavijimenezmulet.products.view
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.CircularProgressIndicator
@@ -16,6 +19,7 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshIndicator
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.xavijimenezmulet.framework.base.jetpack.rememberFlowWithLifecycle
+import com.xavijimenezmulet.theme.MobileChallengeColors
 import com.xavijimenezmulet.utils.extension.orZero
 
 @Composable
@@ -40,12 +44,14 @@ fun ProductContent(
                 scale = true
             )
         },
+        modifier = Modifier.background(MobileChallengeColors.background),
         content = {
             LazyColumn(
                 contentPadding = paddingValues,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(top = 4.dp),
+                    .padding(top = 4.dp)
+                    .background(MobileChallengeColors.background),
             ) {
                 items(pagingItems.itemCount) { index ->
                     pagingItems[index]?.let {

@@ -16,9 +16,20 @@
     <string name="on_boarding_step_discount_body">You can get 2 for 1 on some products and of course the higher the quantity, the lower the price.</string>
 
     <string name="bottom_menu_products">Products</string>
+    <string name="bottom_menu_settings">Settings</string>
 
+    <string name="text_theme_mode">Theme Mode</string>
+    <string name="text_rate_app">Rate App</string>
+    <string name="text_share_app">Share App</string>
+    <string name="text_term_and_privacy">Term &amp; Privacy</string>
+    <string name="text_app_language">App Language</string>
+    <string name="text_about">About Me</string>
+    <string name="text_app_version">App Version</string>
     <string name="app_exit_label">Press BACK again to exit</string>
     <string name="text_no_data_found">No suitable data found.</string>
     <string name="text_retry">Retry</string>
     <string name="text_finish">Finish</string>
+
+    <string name="text_language_english">English</string>
+    <string name="text_language_spanish">Spanish</string>
 </resources>

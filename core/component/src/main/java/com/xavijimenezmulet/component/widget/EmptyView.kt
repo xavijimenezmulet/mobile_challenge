@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import com.xavijimenezmulet.theme.MobileChallengeColors
 import com.xavijimenezmulet.theme.MobileChallengeTheme
 import com.xavijimenezmulet.theme.R
 import com.xavijimenezmulet.theme.Red
@@ -42,10 +43,11 @@ fun EmptyView(modifier: Modifier = Modifier) {
         )
         Text(
             text = stringResource(id = R.string.text_no_data_found),
-            style = MaterialTheme.typography.h3,
+            style = MaterialTheme.typography.h5,
             textAlign = TextAlign.Center,
             modifier = modifier
-                .fillMaxWidth()
+                .fillMaxWidth(),
+            color = MobileChallengeColors.onTertiary
         )
     }
 }
