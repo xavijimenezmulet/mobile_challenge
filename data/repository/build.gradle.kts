@@ -12,6 +12,7 @@ dependencies {
     LOCAL
     REMOTE
     MODEL
+    ENTITY
     addCommonDependencies()
     addHiltDependency()
     implementation(Depends.datastorePref)

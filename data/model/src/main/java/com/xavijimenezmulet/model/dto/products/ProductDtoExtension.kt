@@ -31,3 +31,13 @@ fun Product.toProductEntity() = ProductEntity(
     code = code,
     price = price
 )
+
+fun ProductResponse.toProductEntity() = ProductEntity(
+    id = null,
+    name = name,
+    code = code,
+    price = price
+)
+
+@JvmName("toProductResponseListProductEntity")
+fun List<ProductResponse>.toProductEntityList() = map { it.toProductEntity() }

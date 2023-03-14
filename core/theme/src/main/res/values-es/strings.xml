@@ -14,6 +14,10 @@
     <string name="bottom_menu_products">Productos</string>
     <string name="bottom_menu_settings">Ajustes</string>
 
+    <string name="text_information">Información</string>
+    <string name="text_name">Nombre</string>
+    <string name="text_code">Código</string>
+    <string name="text_price">Precio</string>
     <string name="text_theme_mode">Modo</string>
     <string name="text_rate_app">Puntúa la App</string>
     <string name="text_share_app">Comparte la App</string>

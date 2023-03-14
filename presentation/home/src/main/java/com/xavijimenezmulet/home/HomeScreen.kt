@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.google.accompanist.insets.navigationBarsHeight
 import com.google.accompanist.insets.navigationBarsPadding
 import com.ramcosta.composedestinations.annotation.Destination
-import com.xavijimenezmulet.products.ProductsScreen
+import com.xavijimenezmulet.products.list.ProductsScreen
 import com.xavijimenezmulet.provider.NavigationProvider
 import com.xavijimenezmulet.settings.SettingsScreen
 import com.xavijimenezmulet.theme.MobileChallengeColors

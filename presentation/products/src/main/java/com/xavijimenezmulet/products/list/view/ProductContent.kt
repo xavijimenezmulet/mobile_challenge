@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package com.xavijimenezmulet.products.view
+package com.xavijimenezmulet.products.list.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,8 +13,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.xavijimenezmulet.products.ProductsViewModel
-import com.xavijimenezmulet.products.CharactersViewState
+import com.xavijimenezmulet.products.list.ProductsViewModel
+import com.xavijimenezmulet.products.list.CharactersViewState
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshIndicator
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState

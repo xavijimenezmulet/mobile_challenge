@@ -2,6 +2,7 @@ package com.xavijimenezmulet.mobilechallenge.provider
 
 import androidx.navigation.NavController
 import com.ramcosta.composedestinations.navigation.navigate
+import com.xavijimenezmulet.products.detail.destinations.ProductDetailScreenDestination
 import com.xavijimenezmulet.provider.NavigationProvider
 import com.xavijimenezmulet.settings.destinations.AboutScreenDestination
 import com.xavijimenezmulet.settings.destinations.LanguageScreenDestination
@@ -21,7 +22,7 @@ class AppNavigationProvider constructor(
     }
 
     override fun openProductDetail(id: Int) {
-        navController.navigateUp()
+        navController.navigate(ProductDetailScreenDestination(id))
     }
 
     override fun openTermAndPrivacy() {

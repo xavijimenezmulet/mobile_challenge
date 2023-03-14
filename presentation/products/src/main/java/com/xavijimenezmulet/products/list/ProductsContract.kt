@@ -1,4 +1,4 @@
-package com.xavijimenezmulet.products
+package com.xavijimenezmulet.products.list
 
 import androidx.paging.PagingData
 import com.xavijimenezmulet.entity.products.Product

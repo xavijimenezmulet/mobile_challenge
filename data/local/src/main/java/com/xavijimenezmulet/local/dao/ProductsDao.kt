@@ -11,5 +11,5 @@ interface ProductsDao : BaseDao<ProductEntity> {
     suspend fun getProductList(): List<ProductEntity>
 
     @Query("SELECT * FROM ${ProductEntity.TABLE_NAME} WHERE id = :id")
-    suspend fun getProduct(id: Int): ProductEntity?
+    suspend fun getProduct(id: Int): ProductEntity
 }

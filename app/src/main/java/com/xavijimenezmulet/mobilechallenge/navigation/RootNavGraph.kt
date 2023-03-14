@@ -3,6 +3,7 @@ package com.xavijimenezmulet.mobilechallenge.navigation
 import com.ramcosta.composedestinations.spec.DestinationSpec
 import com.ramcosta.composedestinations.spec.NavGraphSpec
 import com.xavijimenezmulet.home.HomeNavGraph
+import com.xavijimenezmulet.products.detail.ProductsNavGraph
 import com.xavijimenezmulet.settings.SettingsNavGraph
 
 /**
@@ -19,6 +20,7 @@ object RootNavGraph : NavGraphSpec {
 
     override val nestedNavGraphs = listOf(
         HomeNavGraph,
+        ProductsNavGraph,
         SettingsNavGraph
     )
 }

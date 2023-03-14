@@ -5,6 +5,7 @@ import androidx.paging.PagingState
 import com.xavijimenezmulet.entity.products.Product
 import com.xavijimenezmulet.model.dto.products.toProductDtoList
 import com.xavijimenezmulet.repository.products.ProductsRepository
+import kotlinx.coroutines.flow.collect
 import java.io.IOException
 
 class ProductPagingSource(
@@ -30,8 +31,9 @@ class ProductPagingSource(
         // for first case it will be null, then we can pass some default value, in our case it's 1
         val page = params.key ?: 1
         return try {
-            val response = repository.getProductList()
-            val productList = response.products.orEmpty().toProductDtoList()
+
+            val productList = mutableListOf<Product>()
+            repository.getProductList().collect { productList.addAll(it) }
 
             LoadResult.Page(
                 data = productList,

@@ -1,4 +1,4 @@
-package com.xavijimenezmulet.products
+package com.xavijimenezmulet.products.list
 
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingConfig

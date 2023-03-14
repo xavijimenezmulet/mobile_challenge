@@ -18,6 +18,10 @@
     <string name="bottom_menu_products">Products</string>
     <string name="bottom_menu_settings">Settings</string>
 
+    <string name="text_information">Information</string>
+    <string name="text_name">Name</string>
+    <string name="text_code">Code</string>
+    <string name="text_price">Price</string>
     <string name="text_theme_mode">Theme Mode</string>
     <string name="text_rate_app">Rate App</string>
     <string name="text_share_app">Share App</string>

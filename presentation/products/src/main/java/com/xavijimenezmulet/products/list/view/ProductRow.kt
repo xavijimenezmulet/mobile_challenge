@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterialApi::class)
 
-package com.xavijimenezmulet.products.view
+package com.xavijimenezmulet.products.list.view
 
 import android.content.res.Configuration
 import androidx.compose.foundation.clickable
@@ -21,7 +21,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.xavijimenezmulet.constants.Constants.PRODUCT_IMAGE_URL
 import com.xavijimenezmulet.entity.products.Product
-import com.xavijimenezmulet.products.ProductsViewModel
+import com.xavijimenezmulet.products.list.ProductsViewModel
 import com.xavijimenezmulet.theme.MobileChallengeColors
 import com.xavijimenezmulet.theme.MobileChallengeTheme
 import com.xavijimenezmulet.theme.MobileChallengeTypography

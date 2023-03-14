@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterialApi::class, ExperimentalMaterialApi::class)
 
-package com.xavijimenezmulet.products
+package com.xavijimenezmulet.products.list
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
@@ -22,7 +22,7 @@ import com.xavijimenezmulet.component.widget.ErrorView
 import com.xavijimenezmulet.component.widget.LoadingView
 import com.xavijimenezmulet.component.widget.MCToolbar
 import com.xavijimenezmulet.framework.base.mvi.BaseViewState
-import com.xavijimenezmulet.products.view.ProductContent
+import com.xavijimenezmulet.products.list.view.ProductContent
 import com.xavijimenezmulet.provider.NavigationProvider
 import com.xavijimenezmulet.theme.MobileChallengeColors
 import com.xavijimenezmulet.theme.MobileChallengeTheme
