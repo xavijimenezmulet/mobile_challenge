@@ -17,15 +17,11 @@ enum class BottomBarHomeItem(
 ) {
     PRODUCTS(
         title = R.string.bottom_menu_products,
-        icon = Icons.Filled.Home
-    ),
-    EPISODES(
-        title = R.string.bottom_menu_products,
         icon = Icons.Filled.Dashboard
     ),
-    LOCATIONS(
-        title = R.string.bottom_menu_products,
-        icon = Icons.Filled.LocationCity
+    CART(
+        title = R.string.bottom_menu_cart,
+        icon = Icons.Filled.ShoppingCart
     ),
     SETTINGS(
         title = R.string.bottom_menu_settings,

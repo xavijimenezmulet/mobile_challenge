@@ -12,6 +12,7 @@
     <string name="on_boarding_step_discount_body">Puedes conseguir 2x1 en algunos productos y por supuesto a mayor cantidad menor será el precio.</string>
 
     <string name="bottom_menu_products">Productos</string>
+    <string name="bottom_menu_cart">Cesta</string>
     <string name="bottom_menu_settings">Ajustes</string>
 
     <string name="text_information">Información</string>
@@ -29,6 +30,8 @@
     <string name="text_no_data_found">No se encontraron resultados.</string>
     <string name="text_retry">Reintentar</string>
     <string name="text_finish">Finalizar</string>
+    <string name="text_add_to_cart">Añadir a la cesta</string>
+    <string name="text_product_add_to_cart">¡Producto añadido a la cesta!</string>
 
     <string name="text_language_english">Inglés</string>
     <string name="text_language_spanish">Español</string>

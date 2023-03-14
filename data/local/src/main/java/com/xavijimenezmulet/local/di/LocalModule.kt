@@ -2,7 +2,8 @@ package com.xavijimenezmulet.local.di
 
 import android.content.Context
 import androidx.room.Room
-import com.xavijimenezmulet.local.dao.ProductsDao
+import com.xavijimenezmulet.local.dao.cart.CartDao
+import com.xavijimenezmulet.local.dao.products.ProductsDao
 import com.xavijimenezmulet.local.db.MobileChallengeDatabase
 import dagger.Module
 import dagger.Provides
@@ -37,7 +38,13 @@ class LocalModule {
 
     @Provides
     @Singleton
-    fun provideCharacterFavoriteDao(appDatabase: MobileChallengeDatabase): ProductsDao {
+    fun provideProductsDao(appDatabase: MobileChallengeDatabase): ProductsDao {
         return appDatabase.productsDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideCartDao(appDatabase: MobileChallengeDatabase): CartDao {
+        return appDatabase.cartDao()
     }
 }

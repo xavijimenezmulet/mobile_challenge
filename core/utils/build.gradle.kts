@@ -6,6 +6,8 @@ plugins {
 configureAndroidLibrary(Namings.utilsModule)
 
 dependencies {
+    CONSTANTS
+    ENTITY
     addCommonDependencies()
     implementation(Depends.moshi)
 }

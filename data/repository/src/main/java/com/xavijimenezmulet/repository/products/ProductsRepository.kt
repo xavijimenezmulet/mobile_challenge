@@ -2,11 +2,10 @@ package com.xavijimenezmulet.repository.products
 
 import androidx.annotation.VisibleForTesting
 import com.xavijimenezmulet.entity.products.Product
-import com.xavijimenezmulet.local.dao.ProductsDao
+import com.xavijimenezmulet.local.dao.products.ProductsDao
 import com.xavijimenezmulet.model.dto.products.toProductDtoList
 import com.xavijimenezmulet.model.dto.products.toProductEntityList
 import com.xavijimenezmulet.remote.service.products.ProductsService
-import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

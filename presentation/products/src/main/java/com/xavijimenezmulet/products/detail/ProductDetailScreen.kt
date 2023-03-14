@@ -16,7 +16,7 @@ import com.xavijimenezmulet.component.widget.ErrorView
 import com.xavijimenezmulet.component.widget.LoadingView
 import com.xavijimenezmulet.component.widget.MCToolbarWithNavIcon
 import com.xavijimenezmulet.framework.base.mvi.BaseViewState
-import com.xavijimenezmulet.products.detail.view.CharacterDetailContent
+import com.xavijimenezmulet.products.detail.view.ProductDetailContent
 import com.xavijimenezmulet.provider.NavigationProvider
 import com.xavijimenezmulet.theme.MobileChallengeColors
 import com.xavijimenezmulet.theme.MobileChallengeTheme
@@ -26,16 +26,16 @@ import com.xavijimenezmulet.utils.extension.cast
 @Composable
 fun ProductDetailScreen(
     id: Int = 0,
-    viewModel: CharacterDetailViewModel = hiltViewModel(),
+    viewModel: ProductDetailViewModel = hiltViewModel(),
     navigator: NavigationProvider
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
-    CharacterDetailBody(pressOnBack = {
+    ProductDetailBody(pressOnBack = {
         navigator.navigateUp()
     }) {
         when (uiState) {
-            is BaseViewState.Data -> CharacterDetailContent(
+            is BaseViewState.Data -> ProductDetailContent(
                 data = uiState.cast<BaseViewState.Data<ProductDetailViewState>>().value,
                 navigator = navigator
             )
@@ -56,7 +56,7 @@ fun ProductDetailScreen(
 }
 
 @Composable
-private fun CharacterDetailBody(
+private fun ProductDetailBody(
     pressOnBack: () -> Unit = {},
     pageContent: @Composable (PaddingValues) -> Unit
 ) {
@@ -75,10 +75,10 @@ private fun CharacterDetailBody(
 @Preview(showBackground = true, name = "Light Mode")
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES, name = "Dark Mode")
 @Composable
-fun CharacterDetailScreenPreview() {
+fun ProductDetailScreenPreview() {
     MobileChallengeTheme {
         Surface {
-            CharacterDetailBody {
+            ProductDetailBody {
             }
         }
     }

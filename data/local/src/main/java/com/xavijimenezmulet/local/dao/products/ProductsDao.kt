@@ -1,4 +1,4 @@
-package com.xavijimenezmulet.local.dao
+package com.xavijimenezmulet.local.dao.products
 
 import androidx.room.Dao
 import androidx.room.Query
