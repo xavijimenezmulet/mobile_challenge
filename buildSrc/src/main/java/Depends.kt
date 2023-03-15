@@ -8,6 +8,7 @@ object Depends {
     const val application = "com.android.application"
     const val library = "com.android.library"
     const val kotlinAndroid = "org.jetbrains.kotlin.android"
+    const val parcelizePlugin = "kotlin-parcelize"
     const val kotlinKapt = "kotlin-kapt"
     const val hiltPlugin = "dagger.hilt.android.plugin"
     const val symbolPlugin = "com.google.devtools.ksp"
