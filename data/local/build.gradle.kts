@@ -12,6 +12,7 @@ dependencies {
     MODEL
     FRAMEWORK
     TEST_UTILS
+    ENTITY
     addCommonDependencies()
     addHiltDependency()
     addTestDependencies()
