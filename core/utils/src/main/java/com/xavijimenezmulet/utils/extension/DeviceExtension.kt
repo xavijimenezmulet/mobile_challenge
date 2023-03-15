@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.xavijimenezmulet.utils.extension
 
 import android.annotation.SuppressLint
