@@ -13,6 +13,11 @@ import org.junit.Assert
 import org.junit.Test
 import java.io.IOException
 
+/**
+ *   @author xavierjimenez
+ *   @since 15/3/23
+ *   @email xavijimenezmulet@macaqueconsulting.com
+ */
 class ProductsDaoTest : TestRobolectric() {
     private lateinit var database: MobileChallengeDatabase
 
@@ -57,14 +62,14 @@ class ProductsDaoTest : TestRobolectric() {
     }
 
     @Test
-    fun getFavoriteById_WithoutData_ShouldNotFound() = runTest {
+    fun getProductById_WithoutData_ShouldNotFound() = runTest {
         val fakeProducts = LocalMockData.getProductsList()
         val productToFind = fakeProducts.first()
         Assert.assertNull(dao.getProduct(productToFind.id.orZero()))
     }
 
     @Test
-    fun getFavoriteById_WithData_ShouldFound() = runTest {
+    fun getProductById_WithData_ShouldFound() = runTest {
         val fakeProducts = LocalMockData.getProductsList()
         dao.insert(fakeProducts)
         val productToFind = fakeProducts.first()

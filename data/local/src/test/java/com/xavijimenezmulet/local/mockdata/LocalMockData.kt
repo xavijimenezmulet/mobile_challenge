@@ -1,6 +1,7 @@
 package com.xavijimenezmulet.local.mockdata
 
 import com.xavijimenezmulet.entity.cart.Cart
+import com.xavijimenezmulet.model.local.cart.CartItemClickEntity
 import com.xavijimenezmulet.model.local.products.ProductEntity
 
 /**
@@ -21,20 +22,20 @@ object LocalMockData {
         )
     }
 
-    fun getCartList(): List<Cart> {
+    fun getCartList(): List<CartItemClickEntity> {
         return listOf(
-            Cart(
+            CartItemClickEntity(
                 name = "Voucher",
                 code = "VOUCHER",
                 price = 5f,
                 promo = "PROMO",
                 count = 20
             ),
-            Cart(
+            CartItemClickEntity(
                 name = "T-Shirt",
                 code = "TSHIRT",
                 price = 20f,
-                promo = "PROMO",
+                promo = "NONE",
                 count = 20
             )
         )
