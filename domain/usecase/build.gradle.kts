@@ -12,6 +12,7 @@ dependencies {
     MODEL
     REPOSITORY
     FRAMEWORK
+    TEST_UTILS
     addCommonDependencies()
     addHiltDependency()
 }
