@@ -10,4 +10,5 @@ dependencies {
     implementation(Depends.junit)
     implementation(Depends.coroutinesTest)
     implementation(Depends.mockk)
+    implementation(Depends.robolectric)
 }

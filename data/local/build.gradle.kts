@@ -11,6 +11,7 @@ dependencies {
     UTILS
     MODEL
     FRAMEWORK
+    TEST_UTILS
     addCommonDependencies()
     addHiltDependency()
     addTestDependencies()
