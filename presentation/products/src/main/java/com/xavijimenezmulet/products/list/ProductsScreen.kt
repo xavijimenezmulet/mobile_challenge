@@ -59,7 +59,7 @@ private fun ProductsPage(
         is BaseViewState.Data -> ProductContent(
             viewModel = viewModel,
             paddingValues = paddings,
-            viewState = uiState.cast<BaseViewState.Data<CharactersViewState>>().value,
+            viewState = uiState.cast<BaseViewState.Data<ProductsViewState>>().value,
             selectItem = { id -> navigator.openProductDetail(id) }
         )
         is BaseViewState.Empty -> EmptyView(modifier = modifier)

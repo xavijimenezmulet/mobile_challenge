@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.emptyFlow
  *   @since 13/3/23
  *   @email xavijimenezmulet@macaqueconsulting.com
  */
-data class CharactersViewState(
+data class ProductsViewState(
     val pagedData: Flow<PagingData<Product>> = emptyFlow()
 )
 

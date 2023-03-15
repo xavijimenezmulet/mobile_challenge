@@ -14,7 +14,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.xavijimenezmulet.products.list.ProductsViewModel
-import com.xavijimenezmulet.products.list.CharactersViewState
+import com.xavijimenezmulet.products.list.ProductsViewState
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshIndicator
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
@@ -26,7 +26,7 @@ import com.xavijimenezmulet.utils.extension.orZero
 fun ProductContent(
     viewModel: ProductsViewModel = hiltViewModel(),
     paddingValues: PaddingValues,
-    viewState: CharactersViewState,
+    viewState: ProductsViewState,
     selectItem: (Int) -> Unit = {}
 ) {
     val pagingItems = rememberFlowWithLifecycle(viewState.pagedData).collectAsLazyPagingItems()

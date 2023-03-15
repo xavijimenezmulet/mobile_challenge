@@ -12,7 +12,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ProductsViewModel @Inject constructor(
     private val getProducts: GetProducts,
-) : MviViewModel<BaseViewState<CharactersViewState>, ProductsEvent>() {
+) : MviViewModel<BaseViewState<ProductsViewState>, ProductsEvent>() {
 
     private val config = PagingConfig(pageSize = 0)
 
@@ -26,6 +26,6 @@ class ProductsViewModel @Inject constructor(
         setState(BaseViewState.Loading)
         val params = GetProducts.Params(config)
         val pagedFlow = getProducts(params).cachedIn(scope = viewModelScope)
-        setState(BaseViewState.Data(CharactersViewState(pagedData = pagedFlow)))
+        setState(BaseViewState.Data(ProductsViewState(pagedData = pagedFlow)))
     }
 }
