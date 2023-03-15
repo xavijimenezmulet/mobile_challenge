@@ -1,4 +1,4 @@
-package com.xavijimenezmulet.local.mockdata
+package com.xavijimenezmulet.repository.mockdata
 
 import com.xavijimenezmulet.model.local.cart.CartItemClickEntity
 import com.xavijimenezmulet.model.local.products.ProductEntity
@@ -8,8 +8,7 @@ import com.xavijimenezmulet.model.local.products.ProductEntity
  * @since 15/3/23
  * @email xavijimenezmulet@macaqueconsulting.com
  */
-object LocalMockData {
-
+object RepositoryMockData {
     fun getProductsList(): List<ProductEntity> {
         return listOf(
             ProductEntity(

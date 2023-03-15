@@ -22,7 +22,7 @@ class DeleteCartItem @Inject constructor(
     )
 
     override suspend fun FlowCollector<Unit>.execute(params: Params) {
-        repository.deleteCartItem(params.cart)
+        repository.deleteCartItem(params.cart.code)
         emit(Unit)
     }
 }

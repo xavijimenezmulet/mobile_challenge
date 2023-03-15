@@ -13,6 +13,7 @@ dependencies {
     REMOTE
     MODEL
     ENTITY
+    TEST_UTILS
     addCommonDependencies()
     addHiltDependency()
     implementation(Depends.datastorePref)
