@@ -11,4 +11,6 @@ dependencies {
     implementation(Depends.coroutinesTest)
     implementation(Depends.mockk)
     implementation(Depends.robolectric)
+    implementation(Depends.moshi)
+    implementation(Depends.hamcrest)
 }

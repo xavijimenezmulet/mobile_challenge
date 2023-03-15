@@ -4,7 +4,7 @@
  *   @email xavijimenezmulet@macaqueconsulting.com
  */
 object Depends {
-    const val testRunnerPackage = "com.xavijimenezmulet.framework.CustomTestRunner"
+    const val testRunnerPackage = "androidx.test.runner.AndroidJUnitRunner"
     const val application = "com.android.application"
     const val library = "com.android.library"
     const val kotlinAndroid = "org.jetbrains.kotlin.android"

@@ -21,17 +21,6 @@ fun ProductResponse.toProductDto() = Product(
     code = code.orEmpty(),
     price = price
 )
-
-@JvmName("toProductDtoListProductResponse")
-fun List<ProductResponse>.toProductDtoList() = map { it.toProductDto() }
-
-fun Product.toProductEntity() = ProductEntity(
-    id = id.orZero(),
-    name = name,
-    code = code,
-    price = price
-)
-
 fun ProductResponse.toProductEntity() = ProductEntity(
     id = null,
     name = name,
