@@ -13,7 +13,7 @@ object Versions {
   const val coreKtx = "1.9.0"
   const val appCompat = "1.6.1"
   const val material = "1.8.0"
-  const val dagger = "2.34.1"
+  const val kotlinExtensionVersion = "1.4.0"
   const val junit = "4.13.2"
   const val testExtJunit = "1.1.5"
   const val espressoCore = "3.5.1"

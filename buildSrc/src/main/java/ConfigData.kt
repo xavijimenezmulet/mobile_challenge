@@ -6,6 +6,7 @@
 object ConfigData {
     const val debug = "debug"
     const val release = "release"
+    const val main = "main"
     const val proguardTxt = "proguard-android-optimize.txt"
     const val proguardPro = "proguard-rules.pro"
     const val xInlineClasses = "-Xinline-classes"

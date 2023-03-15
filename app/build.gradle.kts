@@ -52,13 +52,13 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.0"
+        kotlinCompilerExtensionVersion = Versions.kotlinExtensionVersion
     }
 
     packagingOptions {
         resources.excludes.apply {
-            add("META-INF/AL2.0")
-            add("META-INF/LGPL2.1")
+            add(Excludes.metaInfAl2)
+            add(Excludes.metaInfAl21)
         }
     }
 
@@ -78,7 +78,7 @@ android {
 android.applicationVariants.all {
     val variantName = name
     kotlin.sourceSets {
-        getByName("main") {
+        getByName(ConfigData.main) {
             kotlin.srcDir(File("build/generated/ksp/$variantName/kotlin"))
         }
     }
