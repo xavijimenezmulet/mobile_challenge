@@ -6,8 +6,10 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.xavijimenezmulet.entity.cart.Cart
 import com.xavijimenezmulet.framework.base.usecase.FlowPagingUseCase
+import com.xavijimenezmulet.framework.base.usecase.LocalUseCase
 import com.xavijimenezmulet.repository.cart.CartRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.FlowCollector
 import javax.inject.Inject
 
 /**
@@ -18,16 +20,10 @@ import javax.inject.Inject
 class GetCartList @Inject constructor(
     @get:VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     internal val repository: CartRepository
-) : FlowPagingUseCase<GetCartList.Params, Cart>() {
+) : LocalUseCase<Unit, List<Cart>>() {
 
-    data class Params(
-        val pagingConfig: PagingConfig
-    )
-
-    override fun execute(params: Params): Flow<PagingData<Cart>> {
-        return Pager(
-            config = params.pagingConfig,
-            pagingSourceFactory = { CartPagingSource(repository) }
-        ).flow
+    override suspend fun FlowCollector<List<Cart>>.execute(params: Unit) {
+        val favors = repository.getCartItemList()
+        emit(favors)
     }
 }

@@ -15,7 +15,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.paging.compose.LazyPagingItems
 import com.xavijimenezmulet.cart.CartViewModel
 import com.xavijimenezmulet.component.widget.MCDivider
 import com.xavijimenezmulet.entity.cart.Cart
@@ -31,17 +30,17 @@ import com.xavijimenezmulet.utils.utils.cart.AddToCartUtils
 
 @Composable
 fun CartCheckout(
-    pagingItems: LazyPagingItems<Cart>,
+    cartList: List<Cart>,
     viewModel: CartViewModel = hiltViewModel()
 ) {
     Column(
         verticalArrangement = Arrangement.Center
     ) {
-        CartInfoCheckout(pagingItems = pagingItems)
+        CartInfoCheckout(cartList = cartList)
 
         Spacer(Modifier.height(10.dp))
 
-        CartButton(modifier = Modifier.fillMaxWidth(), onClick = {})
+        CartButton(modifier = Modifier.fillMaxWidth(), onClick = {}, cartList = cartList)
 
         Spacer(Modifier.height(10.dp))
     }
@@ -50,7 +49,7 @@ fun CartCheckout(
 @Composable
 fun CartInfoCheckout(
     viewModel: CartViewModel = hiltViewModel(),
-    pagingItems: LazyPagingItems<Cart>
+    cartList: List<Cart>
 ) {
     Column(
         modifier = Modifier
@@ -77,21 +76,21 @@ fun CartInfoCheckout(
             ) {
                 TextRow(
                     key = stringResource(id = R.string.text_order_subtotal),
-                    value = AddToCartUtils.calculateSubtotal(pagingItems)
+                    value = AddToCartUtils.calculateSubtotal(cartList as ArrayList<Cart>)
                 )
 
                 MCDivider()
 
                 TextRow(
                     key = stringResource(id = R.string.text_order_discount),
-                    value = "-20"
+                    value = AddToCartUtils.calculateDiscounts(cartList)
                 )
 
                 MCDivider()
 
                 TextRow(
                     key = stringResource(id = R.string.text_order_total),
-                    value = "80"
+                    value = AddToCartUtils.calculateTotal(cartList)
                 )
             }
         }
@@ -128,7 +127,8 @@ private fun TextRow(key: String, value: String) {
 fun CartButton(
     modifier: Modifier,
     onClick: () -> Unit,
-    viewModel: CartViewModel = hiltViewModel()
+    viewModel: CartViewModel = hiltViewModel(),
+    cartList: List<Cart>
 ) {
     Row(
         modifier = modifier
@@ -148,7 +148,10 @@ fun CartButton(
                 shape = RectangleShape
             ) {
                 Text(
-                    text = stringResource(id = R.string.text_finish_checkout),
+                    text = stringResource(
+                        id = R.string.text_finish_checkout,
+                        AddToCartUtils.calculateTotal(cartList as ArrayList<Cart>)
+                    ),
                     color = White,
                     modifier = Modifier.padding(4.dp)
                 )

@@ -14,10 +14,6 @@ object Constants {
     const val TYPE_MUG = "MUG"
     const val PROMO_NONE = "NONE"
     const val PROMO_TRUE = "PROMO"
-    const val DISCOUNT_10 = 0.2
-    const val DISCOUNT_20 = 0.4
-    const val DISCOUNT_30 = 1.0
-    const val UNITS_FOR_FIRST_DISCOUNT = 10
-    const val UNITS_FOR_SECOND_DISCOUNT = 20
-    const val UNITS_FOR_THIRD_DISCOUNT = 30
+    const val T_SHIRT_PROMO = 3
+
 }

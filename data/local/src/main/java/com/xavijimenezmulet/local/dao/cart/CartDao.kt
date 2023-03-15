@@ -12,7 +12,7 @@ import com.xavijimenezmulet.model.local.cart.CartItemClickEntity
  */
 @Dao
 interface CartDao : BaseDao<CartItemClickEntity> {
-    @Query("SELECT * FROM ${CartItemClickEntity.TABLE_NAME}")
+    @Query("SELECT * FROM ${CartItemClickEntity.TABLE_NAME} ORDER BY name")
     suspend fun getCartItemList(): List<CartItemClickEntity>
 
     @Query("SELECT * FROM ${CartItemClickEntity.TABLE_NAME} WHERE code = :code")

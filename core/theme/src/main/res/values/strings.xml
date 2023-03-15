@@ -42,7 +42,7 @@
     <string name="text_no_data_found">No suitable data found.</string>
     <string name="text_retry">Retry</string>
     <string name="text_finish">Finish</string>
-    <string name="text_finish_checkout">Checkout (%d)</string>
+    <string name="text_finish_checkout">Checkout (%s)</string>
     <string name="text_add_to_cart">Add to cart</string>
     <string name="text_product_add_to_cart">Product added to cart!</string>
 

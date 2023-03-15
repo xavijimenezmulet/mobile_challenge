@@ -42,11 +42,12 @@ import com.xavijimenezmulet.utils.extension.toCurrency
 @Composable
 fun CartRow(
     viewModel: CartViewModel = hiltViewModel(),
-    dto: Cart,
+    index: Int,
     selectedDelete: MutableState<Cart?>,
-    onDeleteItem: () -> Unit = {}
+    onDeleteItem: () -> Unit = {},
+    cartList: List<Cart>
 ) {
-    val counterState = remember { mutableStateOf(dto.count.toString()) }
+    val counterState = remember { mutableStateOf(cartList[index].count.toString()) }
 
     Card(
         modifier = Modifier
@@ -86,19 +87,19 @@ fun CartRow(
                     .padding(top = 12.dp, start = 4.dp, bottom = 4.dp)
             ) {
                 Text(
-                    text = dto.name,
+                    text = cartList[index].name,
                     modifier = Modifier
                         .fillMaxWidth(),
                     style = MobileChallengeTypography.bodyMedium
                 )
                 Text(
-                    text = dto.code,
+                    text = cartList[index].code,
                     modifier = Modifier
                         .fillMaxWidth(),
                     style = MobileChallengeTypography.titleMedium
                 )
                 Text(
-                    text = dto.price.toCurrency(),
+                    text = cartList[index].price.toCurrency(),
                     modifier = Modifier
                         .fillMaxWidth(),
                     style = MobileChallengeTypography.titleLarge
@@ -114,7 +115,12 @@ fun CartRow(
                         if (counterState.value == "1") {
                             //show delete
                         } else {
-                            viewModel.onTriggerEvent(CartEvent.RestItem(dto))
+                            viewModel.onTriggerEvent(
+                                CartEvent.RestItem(
+                                    cartList[index],
+                                    counterState
+                                )
+                            )
                         }
                     },
                     modifier = Modifier.size(30.dp),  //avoid the oval shape
@@ -138,7 +144,7 @@ fun CartRow(
 
                 OutlinedButton(
                     onClick = {
-                        viewModel.onTriggerEvent(CartEvent.AddItem(dto))
+                        viewModel.onTriggerEvent(CartEvent.AddItem(cartList[index], counterState))
                     },
                     modifier = Modifier.size(30.dp),  //avoid the oval shape
                     shape = CircleShape,
@@ -151,7 +157,7 @@ fun CartRow(
 
                 IconButton(
                     onClick = {
-                        selectedDelete.value = dto
+                        selectedDelete.value = cartList[index]
                         onDeleteItem.invoke()
                     }
                 ) {

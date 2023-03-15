@@ -38,7 +38,7 @@
     <string name="text_no_data_found">No se encontraron resultados.</string>
     <string name="text_retry">Reintentar</string>
     <string name="text_finish">Finalizar</string>
-    <string name="text_finish_checkout">Finalizar compra (%d)</string>
+    <string name="text_finish_checkout">Finalizar compra (%s)</string>
     <string name="text_add_to_cart">Añadir a la cesta</string>
     <string name="text_product_add_to_cart">¡Producto añadido a la cesta!</string>
 

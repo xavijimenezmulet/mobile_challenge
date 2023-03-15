@@ -1,8 +1,7 @@
 package com.xavijimenezmulet.cart
 
-import androidx.lifecycle.viewModelScope
+import androidx.compose.runtime.MutableState
 import androidx.paging.PagingConfig
-import androidx.paging.cachedIn
 import com.xavijimenezmulet.entity.cart.Cart
 import com.xavijimenezmulet.framework.base.mvi.BaseViewState
 import com.xavijimenezmulet.framework.base.mvi.MviViewModel
@@ -24,41 +23,38 @@ class CartViewModel @Inject constructor(
 
     override fun onTriggerEvent(eventType: CartEvent) {
         when (eventType) {
-            is CartEvent.LoadCart -> onLoadCart()
-            is CartEvent.RestItem -> onRestItem(eventType.cart)
-            is CartEvent.AddItem -> onAddItem(eventType.cart)
+            is CartEvent.LoadCart -> onLoadFavorites()
+            is CartEvent.RestItem -> onRestItem(eventType.cart, eventType.count)
+            is CartEvent.AddItem -> onAddItem(eventType.cart, eventType.count)
             is CartEvent.DeleteItem -> onDeleteItem(eventType.cart)
         }
     }
 
-    private fun onLoadCart() = safeLaunch {
-        setState(BaseViewState.Loading)
-        val params = GetCartList.Params(config)
-        val pagedFlow = getCartList(params).cachedIn(scope = viewModelScope)
-        pagedFlow.collect {
-            setState(BaseViewState.Data(CartViewState(pagedData = pagedFlow)))
+    private fun onLoadFavorites() = safeLaunch {
+        call(getCartList(Unit)) {
+            if (it.isEmpty()) {
+                setState(BaseViewState.Empty)
+            } else {
+                setState(BaseViewState.Data(CartViewState(cartList = it)))
+            }
         }
     }
 
-    private fun onRestItem(cart: Cart) = safeLaunch {
+    private fun onRestItem(cart: Cart, count: MutableState<String>) = safeLaunch {
         val params =
             AddToCartProduct.Params(cart = AddToCartUtils.toRestSumItemCart(cart, false))
-        call(saveCartItem(params = params))
-        onUpdateCart()
+        count.value = params.cart?.count.toString()
+        call(saveCartItem(params = params)) {
+            onTriggerEvent(CartEvent.LoadCart)
+        }
     }
 
-    private fun onAddItem(cart: Cart) = safeLaunch {
+    private fun onAddItem(cart: Cart, count: MutableState<String>) = safeLaunch {
         val params =
             AddToCartProduct.Params(cart = AddToCartUtils.toRestSumItemCart(cart, true))
-        call(saveCartItem(params = params))
-        onUpdateCart()
-    }
-
-    private fun onUpdateCart() = safeLaunch {
-        val params = GetCartList.Params(config)
-        val pagedFlow = getCartList(params).cachedIn(scope = viewModelScope)
-        pagedFlow.collect {
-            setState(BaseViewState.Data(CartViewState(pagedData = pagedFlow, update = true)))
+        count.value = params.cart?.count.toString()
+        call(saveCartItem(params = params)) {
+            onTriggerEvent(CartEvent.LoadCart)
         }
     }
 

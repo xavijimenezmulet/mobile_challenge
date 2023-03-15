@@ -22,9 +22,7 @@ constructor(
     @get:VisibleForTesting(otherwise = VisibleForTesting.PROTECTED)
     internal val dao: CartDao
 ) {
-    fun getCartItemList(): Flow<List<Cart>> = flow {
-        emit(dao.getCartItemList().toCartDtoList())
-    }
+    suspend fun getCartItemList() = dao.getCartItemList().toCartDtoList()
 
     suspend fun getCartItem(code: String): Cart? = dao.getCartItem(code)?.toCartItem()
 

@@ -20,10 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.xavijimenezmulet.cart.view.CartContent
 import com.xavijimenezmulet.cart.view.RemoveBottomSheetContent
-import com.xavijimenezmulet.component.widget.EmptyView
-import com.xavijimenezmulet.component.widget.ErrorView
-import com.xavijimenezmulet.component.widget.LoadingView
-import com.xavijimenezmulet.component.widget.MCToolbar
+import com.xavijimenezmulet.component.widget.*
 import com.xavijimenezmulet.entity.cart.Cart
 import com.xavijimenezmulet.framework.base.mvi.BaseViewState
 import com.xavijimenezmulet.provider.NavigationProvider
@@ -96,7 +93,7 @@ private fun CartPage(
             CartContent(
                 viewModel = viewModel,
                 paddingValues = paddings,
-                viewState = uiState.cast<BaseViewState.Data<CartViewState>>().value,
+                cartList = uiState.cast<BaseViewState.Data<CartViewState>>().value.cartList,
                 selectedDelete = selectedDelete,
                 onDeleteItem = {
                     coroutineScope.launch {
@@ -109,7 +106,7 @@ private fun CartPage(
                 }
             )
         }
-        is BaseViewState.Empty -> EmptyView(modifier = modifier)
+        is BaseViewState.Empty -> LottieEmptyView()
         is BaseViewState.Error -> ErrorView(
             e = uiState.cast<BaseViewState.Error>().throwable,
             action = {
