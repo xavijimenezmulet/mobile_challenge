@@ -17,4 +17,7 @@ interface CartDao : BaseDao<CartItemClickEntity> {
 
     @Query("SELECT * FROM ${CartItemClickEntity.TABLE_NAME} WHERE code = :code")
     suspend fun getCartItem(code: String): CartItemClickEntity?
+
+    @Query("DELETE FROM ${CartItemClickEntity.TABLE_NAME} WHERE code = :code")
+    suspend fun deleteItem(code: String)
 }

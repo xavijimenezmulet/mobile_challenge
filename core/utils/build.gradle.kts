@@ -9,5 +9,6 @@ dependencies {
     CONSTANTS
     ENTITY
     addCommonDependencies()
+    addComposeDependencies()
     implementation(Depends.moshi)
 }

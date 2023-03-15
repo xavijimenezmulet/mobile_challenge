@@ -34,7 +34,5 @@ constructor(
         }
     }
 
-    fun deleteCartItem(cartItem: CartItemClickEntity): Flow<Unit> = flow {
-        emit(dao.delete(cartItem))
-    }
+    suspend fun deleteCartItem(cartItem: Cart) = dao.deleteItem(cartItem.code)
 }

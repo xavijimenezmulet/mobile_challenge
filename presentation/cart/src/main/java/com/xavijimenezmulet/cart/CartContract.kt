@@ -11,9 +11,13 @@ import kotlinx.coroutines.flow.emptyFlow
  *   @email xavijimenezmulet@macaqueconsulting.com
  */
 data class CartViewState(
-    val pagedData: Flow<PagingData<Cart>> = emptyFlow()
+    val pagedData: Flow<PagingData<Cart>> = emptyFlow(),
+    val update: Boolean = false
 )
 
 sealed class CartEvent {
     object LoadCart : CartEvent()
+    data class RestItem(val cart: Cart) : CartEvent()
+    data class AddItem(val cart: Cart) : CartEvent()
+    data class DeleteItem(val cart: Cart) : CartEvent()
 }

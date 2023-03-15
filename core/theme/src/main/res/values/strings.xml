@@ -19,7 +19,15 @@
     <string name="bottom_menu_cart">Cart</string>
     <string name="bottom_menu_settings">Settings</string>
 
+    <string name="text_approve_remove">Approve Remove</string>
+    <string name="text_cart_delete">Item Delete</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_delete_cart_description">Performing this operation, do you approve the deregistration of %s?</string>
     <string name="text_information">Information</string>
+    <string name="text_oder_information">Order Information</string>
+    <string name="text_order_subtotal">Subtotal</string>
+    <string name="text_order_discount">Discount</string>
+    <string name="text_order_total">Total</string>
     <string name="text_name">Name</string>
     <string name="text_code">Code</string>
     <string name="text_price">Price</string>
@@ -34,6 +42,7 @@
     <string name="text_no_data_found">No suitable data found.</string>
     <string name="text_retry">Retry</string>
     <string name="text_finish">Finish</string>
+    <string name="text_finish_checkout">Checkout (%d)</string>
     <string name="text_add_to_cart">Add to cart</string>
     <string name="text_product_add_to_cart">Product added to cart!</string>
 

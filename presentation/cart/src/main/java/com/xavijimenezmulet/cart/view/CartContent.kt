@@ -5,9 +5,9 @@ package com.xavijimenezmulet.cart.view
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Button
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -17,16 +17,17 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.xavijimenezmulet.cart.CartViewModel
 import com.xavijimenezmulet.cart.CartViewState
 import com.xavijimenezmulet.component.widget.LottieEmptyView
+import com.xavijimenezmulet.entity.cart.Cart
 import com.xavijimenezmulet.framework.base.jetpack.rememberFlowWithLifecycle
 import com.xavijimenezmulet.theme.MobileChallengeColors
-import com.xavijimenezmulet.theme.Red
 
 @Composable
 fun CartContent(
     viewModel: CartViewModel = hiltViewModel(),
     paddingValues: PaddingValues,
     viewState: CartViewState,
-    selectItem: (Int) -> Unit = {}
+    selectedDelete: MutableState<Cart?>,
+    onDeleteItem: () -> Unit = {}
 ) {
     val pagingItems = rememberFlowWithLifecycle(viewState.pagedData).collectAsLazyPagingItems()
 
@@ -36,18 +37,19 @@ fun CartContent(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 4.dp)
                 .background(MobileChallengeColors.background),
         ) {
             LazyColumn(
                 contentPadding = paddingValues,
-                modifier = Modifier.weight(0.5f)
+                modifier = Modifier.weight(0.7f)
             ) {
                 items(pagingItems.itemCount) { index ->
                     pagingItems[index]?.let {
                         CartRow(
                             viewModel,
-                            dto = it
+                            dto = it,
+                            selectedDelete = selectedDelete,
+                            onDeleteItem = onDeleteItem
                         )
                     }
                 }
@@ -65,23 +67,12 @@ fun CartContent(
                 }
             }
 
-            Column(
-                modifier = Modifier.weight(0.5f)
+            Box(
+                modifier = Modifier
+                    .weight(0.5f)
+                    .background(MobileChallengeColors.surface)
             ) {
-                Spacer(Modifier.height(10.dp))
-
-                Button(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(Red)
-                        .padding(5.dp)
-                        .height(20.dp),
-                    onClick = { }
-                ) {
-
-                }
-
-                Spacer(Modifier.height(10.dp))
+                CartCheckout(pagingItems = pagingItems)
             }
         }
     }
