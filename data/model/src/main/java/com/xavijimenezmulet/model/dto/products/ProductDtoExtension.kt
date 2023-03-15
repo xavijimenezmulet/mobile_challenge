@@ -15,12 +15,33 @@ fun ProductEntity.toProductDto() = Product(
 @JvmName("toProductDtoListProductEntity")
 fun List<ProductEntity>.toProductDtoList() = map { it.toProductDto() }
 
+@JvmName("toProductEntityListProductRemote")
+fun List<ProductEntity>.toProductRemoteList() = map { it.toProductResponse()}
+
 fun ProductResponse.toProductDto() = Product(
     id = 0,
     name = name.orEmpty(),
     code = code.orEmpty(),
     price = price
 )
+
+@JvmName("toProductDtoListProductResponse")
+fun List<ProductResponse>.toProductDtoList() = map { it.toProductDto() }
+
+fun Product.toProductEntity() = ProductEntity(
+    id = id.orZero(),
+    name = name,
+    code = code,
+    price = price
+)
+
+fun ProductEntity.toProductResponse() = ProductResponse(
+    name = name,
+    code = code,
+    price = price
+)
+
+
 fun ProductResponse.toProductEntity() = ProductEntity(
     id = null,
     name = name,
