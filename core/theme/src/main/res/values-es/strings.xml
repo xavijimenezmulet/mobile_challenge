@@ -27,6 +27,7 @@
     <string name="text_order_subtotal">Subtotal</string>
     <string name="text_order_discount">Descuento</string>
     <string name="text_order_total">Total</string>
+    <string name="text_order_thanks">¡Gracias por su compra!</string>
     <string name="text_theme_mode">Modo</string>
     <string name="text_rate_app">Puntúa la App</string>
     <string name="text_share_app">Comparte la App</string>

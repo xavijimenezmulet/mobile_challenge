@@ -7,6 +7,7 @@ import com.xavijimenezmulet.framework.base.mvi.BaseViewState
 import com.xavijimenezmulet.framework.base.mvi.MviViewModel
 import com.xavijimenezmulet.usecase.cart.AddToCartProduct
 import com.xavijimenezmulet.usecase.cart.DeleteCartItem
+import com.xavijimenezmulet.usecase.cart.DeleteCartList
 import com.xavijimenezmulet.usecase.cart.GetCartList
 import com.xavijimenezmulet.utils.utils.cart.AddToCartUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +17,8 @@ import javax.inject.Inject
 class CartViewModel @Inject constructor(
     private val getCartList: GetCartList,
     private val saveCartItem: AddToCartProduct,
-    private val deleteItem: DeleteCartItem
+    private val deleteItem: DeleteCartItem,
+    private val deleteCartList: DeleteCartList
 ) : MviViewModel<BaseViewState<CartViewState>, CartEvent>() {
 
     private val config = PagingConfig(pageSize = 0)
@@ -27,6 +29,7 @@ class CartViewModel @Inject constructor(
             is CartEvent.RestItem -> onRestItem(eventType.cart, eventType.count)
             is CartEvent.AddItem -> onAddItem(eventType.cart, eventType.count)
             is CartEvent.DeleteItem -> onDeleteItem(eventType.cart)
+            CartEvent.CheckoutFinish -> onDeleteList()
         }
     }
 
@@ -60,6 +63,12 @@ class CartViewModel @Inject constructor(
 
     private fun onDeleteItem(cart: Cart) = safeLaunch {
         call(deleteItem(DeleteCartItem.Params(cart))) {
+            onTriggerEvent(CartEvent.LoadCart)
+        }
+    }
+
+    private fun onDeleteList() = safeLaunch {
+        call(deleteCartList(Unit)) {
             onTriggerEvent(CartEvent.LoadCart)
         }
     }

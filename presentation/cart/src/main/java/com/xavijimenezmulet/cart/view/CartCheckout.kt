@@ -10,16 +10,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.xavijimenezmulet.cart.CartEvent
 import com.xavijimenezmulet.cart.CartViewModel
 import com.xavijimenezmulet.component.widget.MCDivider
 import com.xavijimenezmulet.entity.cart.Cart
 import com.xavijimenezmulet.theme.*
 import com.xavijimenezmulet.theme.R
+import com.xavijimenezmulet.utils.extension.toast
 import com.xavijimenezmulet.utils.utils.cart.AddToCartUtils
 
 /**
@@ -33,6 +36,7 @@ fun CartCheckout(
     cartList: List<Cart>,
     viewModel: CartViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     Column(
         verticalArrangement = Arrangement.Center
     ) {
@@ -40,7 +44,10 @@ fun CartCheckout(
 
         Spacer(Modifier.height(10.dp))
 
-        CartButton(modifier = Modifier.fillMaxWidth(), onClick = {}, cartList = cartList)
+        CartButton(modifier = Modifier.fillMaxWidth(), onClick = {
+            viewModel.onTriggerEvent(CartEvent.CheckoutFinish)
+            context.toast(context.getString(R.string.text_order_thanks))
+        }, cartList = cartList)
 
         Spacer(Modifier.height(10.dp))
     }

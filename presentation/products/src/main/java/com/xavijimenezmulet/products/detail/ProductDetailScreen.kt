@@ -42,11 +42,10 @@ fun ProductDetailScreen(
             is BaseViewState.Empty -> EmptyView()
             is BaseViewState.Error -> {
                 val error = uiState.cast<BaseViewState.Error>().throwable
-                if (error.message == "force") {
-                    viewModel.onTriggerEvent(ProductDetailEvent.ForceAddToCart)
-                    navigator.navigateUp()
-                } else {
-                    ErrorView(
+                when (error.message) {
+                    "force" -> viewModel.onTriggerEvent(ProductDetailEvent.ForceAddToCart)
+                    "toUp" -> navigator.navigateUp()
+                    else -> ErrorView(
                         e = uiState.cast<BaseViewState.Error>().throwable,
                         action = {
                             viewModel.onTriggerEvent(ProductDetailEvent.LoadProduct(id))

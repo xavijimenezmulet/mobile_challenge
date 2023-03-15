@@ -28,6 +28,7 @@
     <string name="text_order_subtotal">Subtotal</string>
     <string name="text_order_discount">Discount</string>
     <string name="text_order_total">Total</string>
+    <string name="text_order_thanks">Thanks for your order!</string>
     <string name="text_name">Name</string>
     <string name="text_code">Code</string>
     <string name="text_price">Price</string>

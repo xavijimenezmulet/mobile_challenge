@@ -50,6 +50,8 @@ class ProductDetailViewModel @Inject constructor(
     private fun onForceAddToCart() = safeLaunch {
         val params =
             AddToCartProduct.Params(cart = AddToCartUtils.getCartForAdd(cart, currentProduct))
-        call(addToCartProduct(params = params))
+        call(addToCartProduct(params = params)) {
+            setState(BaseViewState.Error(Throwable("toUp")))
+        }
     }
 }

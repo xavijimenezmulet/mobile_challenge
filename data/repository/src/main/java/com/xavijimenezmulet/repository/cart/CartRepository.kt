@@ -33,4 +33,6 @@ constructor(
     }
 
     suspend fun deleteCartItem(cartItem: Cart) = dao.deleteItem(cartItem.code)
+
+    suspend fun deleteCartList() = dao.deleteCartList()
 }

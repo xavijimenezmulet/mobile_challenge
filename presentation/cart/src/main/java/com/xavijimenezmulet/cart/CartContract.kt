@@ -21,4 +21,5 @@ sealed class CartEvent {
     data class RestItem(val cart: Cart, val count: MutableState<String>) : CartEvent()
     data class AddItem(val cart: Cart, val count: MutableState<String>) : CartEvent()
     data class DeleteItem(val cart: Cart) : CartEvent()
+    object CheckoutFinish : CartEvent()
 }
