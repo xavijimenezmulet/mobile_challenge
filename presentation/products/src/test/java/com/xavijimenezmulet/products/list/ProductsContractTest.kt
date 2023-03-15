@@ -12,7 +12,7 @@ class ProductsContractTest {
     private lateinit var event: ProductsEvent
 
     @Test
-    fun verifyEventLoadCart() {
+    fun verifyEventLoadProducts() {
         event = ProductsEvent.LoadProducts
 
         val eventLoadCart = event as ProductsEvent.LoadProducts

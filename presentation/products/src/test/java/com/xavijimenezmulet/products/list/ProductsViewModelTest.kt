@@ -32,7 +32,7 @@ class ProductsViewModelTest : MockkUnitTest() {
     lateinit var viewModel: ProductsViewModel
 
     @Test
-    fun verifyOnTriggerEventLoadGetCartList() = runTest {
+    fun verifyOnTriggerEventLoadGetProductList() = runTest {
         viewModel.onTriggerEvent(ProductsEvent.LoadProducts)
 
         coVerify { getProducts.invoke(any()) }
