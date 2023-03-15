@@ -3,6 +3,12 @@ package com.xavijimenezmulet.remote.service.products
 import com.xavijimenezmulet.model.remote.products.ProductsResponse
 import retrofit2.http.*
 
+/**
+ *   @author xavierjimenez
+ *   @since 10/3/23
+ *   @email xavijimenezmulet@macaqueconsulting.com
+ */
+
 interface ProductsService {
 
     @GET(PRODUCTS)

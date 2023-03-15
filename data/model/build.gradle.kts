@@ -13,5 +13,5 @@ dependencies {
     addCommonDependencies()
     addStorageDependencies()
     addNetworkDependency()
-    api("org.json:json:20210307")
+    api(Depends.json)
 }

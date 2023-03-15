@@ -1,9 +1,7 @@
 package com.xavijimenezmulet.model.dto.cart
 
 import com.xavijimenezmulet.entity.cart.Cart
-import com.xavijimenezmulet.model.dto.products.toProductDto
 import com.xavijimenezmulet.model.local.cart.CartItemClickEntity
-import com.xavijimenezmulet.model.local.products.ProductEntity
 
 /**
  *   @author xavierjimenez

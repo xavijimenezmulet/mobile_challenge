@@ -11,6 +11,7 @@ object Depends {
     const val kotlinKapt = "kotlin-kapt"
     const val hiltPlugin = "dagger.hilt.android.plugin"
     const val symbolPlugin = "com.google.devtools.ksp"
+    const val json = "org.json:json:20210307"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
@@ -25,6 +26,7 @@ object Depends {
     const val hiltGradlePlugin =
         "com.google.dagger:hilt-android-gradle-plugin:${Versions.hiltAndroid}"
     const val hiltCompose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltCompose}"
+    const val mockWebServer = "com.squareup.okhttp3:mockwebserver:5.0.0-alpha.6"
     const val gradlePlugin = "com.android.tools.build:gradle:${Versions.gradlePlugin}"
     const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinPlugin}"
     const val hamcrest = "org.hamcrest:hamcrest:${Versions.hamcrest}"

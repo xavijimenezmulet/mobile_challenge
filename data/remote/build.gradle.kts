@@ -10,6 +10,7 @@ configureAndroidLibrary(Namings.remoteModule)
 dependencies {
     MODEL
     FRAMEWORK
+    TEST_UTILS
     addCommonDependencies()
     addHiltDependency()
     addNetworkDependency()

@@ -19,6 +19,12 @@ import javax.inject.Singleton
 
 private const val BASE_URL = "base_url"
 
+/**
+ *   @author xavierjimenez
+ *   @since 10/3/23
+ *   @email xavijimenezmulet@macaqueconsulting.com
+ */
+
 @Module
 @InstallIn(SingletonComponent::class)
 class RemoteModule {
