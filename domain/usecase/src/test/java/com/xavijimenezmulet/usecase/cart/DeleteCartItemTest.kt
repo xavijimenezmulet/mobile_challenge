@@ -2,14 +2,17 @@
 
 package com.xavijimenezmulet.usecase.cart
 
+import com.xavijimenezmulet.entity.cart.Cart
 import com.xavijimenezmulet.repository.cart.CartRepository
 import com.xavijimenezmulet.testutils.MockkUnitTest
 import io.mockk.coVerify
 import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.RelaxedMockK
 import io.mockk.impl.annotations.SpyK
+import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert.*
 import org.junit.Test
 
 /**
@@ -17,24 +20,24 @@ import org.junit.Test
  * @since 15/3/23
  * @email xavijimenezmulet@macaqueconsulting.com
  */
-class GetCartListTest : MockkUnitTest() {
+class DeleteCartItemTest : MockkUnitTest() {
 
     @RelaxedMockK
     lateinit var repository: CartRepository
 
     @SpyK
     @InjectMockKs
-    private lateinit var getCartList: GetCartList
+    private lateinit var deleteCartItem: DeleteCartItem
 
     @Test
     fun verifyExecute() = runTest {
         // Arrange (Given)
-        val unit = Unit
+        val cart = mockk<Cart>()
 
         // Act (When)
-        getCartList.invoke(unit)
+        deleteCartItem.invoke(DeleteCartItem.Params(cart))
 
         // Assert (Then)
-        coVerify { getCartList.invoke(Unit) }
+        coVerify { deleteCartItem.invoke(any()) }
     }
 }

@@ -17,14 +17,14 @@ import org.junit.Test
  * @since 15/3/23
  * @email xavijimenezmulet@macaqueconsulting.com
  */
-class GetCartListTest : MockkUnitTest() {
+class DeleteCartListTest : MockkUnitTest() {
 
     @RelaxedMockK
     lateinit var repository: CartRepository
 
     @SpyK
     @InjectMockKs
-    private lateinit var getCartList: GetCartList
+    private lateinit var deleteCartList: DeleteCartList
 
     @Test
     fun verifyExecute() = runTest {
@@ -32,9 +32,9 @@ class GetCartListTest : MockkUnitTest() {
         val unit = Unit
 
         // Act (When)
-        getCartList.invoke(unit)
+        deleteCartList.invoke(unit)
 
         // Assert (Then)
-        coVerify { getCartList.invoke(Unit) }
+        coVerify { deleteCartList.invoke(Unit) }
     }
 }
