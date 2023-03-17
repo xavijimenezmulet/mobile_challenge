@@ -84,11 +84,16 @@ android.applicationVariants.all {
     }
 }
 
+configurations.all {
+    resolutionStrategy.dependencySubstitution {
+        substitute(module(Depends.hamcrestLibrary)).using(module(Depends.junit))
+    }
+}
+
 dependencies {
     addModuleDependencies()
     addCommonDependencies()
     addHiltDependency()
     addComposeDependencies()
     addNavigationDependencies()
-
 }

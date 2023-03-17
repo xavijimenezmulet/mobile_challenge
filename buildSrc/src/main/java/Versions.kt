@@ -23,6 +23,7 @@ object Versions {
   const val gradlePlugin = "7.3.1"
   const val kotlinPlugin = "1.8.0"
   const val hamcrest = "2.2"
+  const val hamcrestLibrary = "1.3"
   const val robolectric = "4.9"
   const val mockito = "4.1.0"
   const val androidTestCore = "1.5.0"

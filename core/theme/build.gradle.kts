@@ -12,4 +12,5 @@ dependencies {
     addCommonDependencies()
     addComposeDependencies()
     implementation(Depends.splashscreen)
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
 }

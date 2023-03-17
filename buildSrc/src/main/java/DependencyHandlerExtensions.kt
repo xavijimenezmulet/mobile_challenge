@@ -137,8 +137,8 @@ fun DependencyHandler.addNetworkDependency() {
 }
 
 fun DependencyHandler.addTestDependencies() {
-    testImplementation(Depends.junit)
     testImplementation(Depends.hamcrest)
+    testImplementation(Depends.junit)
     testImplementation(Depends.robolectric)
     testImplementation(Depends.mockito)
     testImplementation(Depends.mockitoInline)

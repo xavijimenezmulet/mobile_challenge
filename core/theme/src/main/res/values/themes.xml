@@ -6,7 +6,7 @@
     </style>
 
     <style name="SplashScreenTheme" parent="Theme.Product">
-        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="android:background">@drawable/bg_splash</item>
     </style>
 
 </resources>

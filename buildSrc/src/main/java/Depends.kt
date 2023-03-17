@@ -31,6 +31,7 @@ object Depends {
     const val gradlePlugin = "com.android.tools.build:gradle:${Versions.gradlePlugin}"
     const val kotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinPlugin}"
     const val hamcrest = "org.hamcrest:hamcrest:${Versions.hamcrest}"
+    const val hamcrestLibrary = "org.hamcrest:hamcrest-core:${Versions.hamcrestLibrary}"
     const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
